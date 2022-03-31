@@ -70,6 +70,7 @@ python test.py --pretrained_model_path ./model_zoo/MST_plus_1stg_lr4e-4_s8_norm_
 
 - Then the code are collected as the following form:
 
+```
   |--MST-plus-plus
   |	|--test_challenge_code
   |	|--test_develop_code
@@ -85,6 +86,7 @@ python test.py --pretrained_model_path ./model_zoo/MST_plus_1stg_lr4e-4_s8_norm_
   |	|       |       |	|--ARAD_1K_0001.jpg
   |	|       |       |	： 
   |	|       |       |	|--ARAD_1K_0950.jpg
+```
 
 
 (2)  To train a single model, run
