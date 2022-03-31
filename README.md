@@ -18,7 +18,7 @@ All the source code and pre-trained models will be released to the public for fu
 
 
 
-# 1. Create Envirement:
+## 1. Create Envirement:
 
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 
