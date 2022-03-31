@@ -35,7 +35,7 @@ All the source code and pre-trained models will be released to the public for fu
 
 # 2. Reproduce the development result:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pZ7wcFXU8Y9HFvViRA0QMvJIkvNXfhLC?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1GzsNbd-XC8UZEq5V4JaisEyCSKVihCQG?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
 
 (2)  Download the validation RGB images from [Google Drive](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view)  and place them to ' /source_code/test_develop_code/Valid_RGB/'. 
 
@@ -50,7 +50,7 @@ python test.py --pretrained_model_path ./model_zoo/MstPlus_1stg_ps128_s8_norm.pt
 
 # 3. Reproduce the challenge result:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/17RbgxylNTZo73Lgx0bcMcd69hg_NE2EJ?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pAzS3YY8-Av49i-uoF7GLzodnt1qYReL?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
 (2)  Download the testing RGB images from [Google Drive](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view)  and place them to ' /MST-plus-plus/test_challenge_code/Test_RGB/'. 
 
