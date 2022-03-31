@@ -11,11 +11,6 @@ This repo includes:
 - Testing code (both development and challenge result).
 - Training code.
 - Pre-trained models.
-- README file.
-
-This repo can reproduce the development and challenge result of our team .
-All the source code and pre-trained models will be released to the public for further research.
-
 
 
 ## 1. Create Envirement:
