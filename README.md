@@ -1,5 +1,5 @@
-# MST
-This is the pytorch implementation of our proposed solution "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction".
+# MST++
+This is the pytorch implementation of our proposed solution "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction". Our MST++ is mainly based on our work MST (https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
 
 ![Illustration of MST](/figure/MST.png)
@@ -99,11 +99,6 @@ cd /MST-plus-plus/train_code/
 python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 --outf ./exp/ --data_root ./ARAD_1K/  --patch_size 128 --stride 8 -norm
 ```
 
-
-
-## 5. This repo is mainly based on MST:
-
-MST: https://github.com/caiyuanhao1998/MST
 
 
 
