@@ -33,7 +33,7 @@ All the source code and pre-trained models will be released to the public for fu
   ```
 
 
-# 2. Reproduce the development result:
+## 2. Reproduce the development result:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1GzsNbd-XC8UZEq5V4JaisEyCSKVihCQG?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
 
@@ -48,7 +48,7 @@ python test.py --pretrained_model_path ./model_zoo/MstPlus_1stg_ps128_s8_norm.pt
 
 
 
-# 3. Reproduce the challenge result:
+## 3. Reproduce the challenge result:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pAzS3YY8-Av49i-uoF7GLzodnt1qYReL?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
@@ -63,7 +63,7 @@ python test.py --pretrained_model_path ./model_zoo/MST_plus_1stg_lr4e-4_s8_norm_
 
 
 
-# 4. Training
+## 4. Training
 
 (1)  Data preparation:
 
@@ -101,13 +101,13 @@ python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 
 
 
 
-# 5. This repo is mainly based on MST:
+## 5. This repo is mainly based on MST:
 
 MST: https://github.com/caiyuanhao1998/MST
 
 
 
-# Citation
+## Citation
 ```
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
