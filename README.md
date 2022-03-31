@@ -17,7 +17,7 @@ This repo can reproduce the development and challenge result of our team .
 All the source code and pre-trained models will be released to the public for further research.
 
 
-#### 1. Create Envirement:
+### 1. Create Envirement:
 
 ------
 
@@ -33,7 +33,7 @@ All the source code and pre-trained models will be released to the public for fu
   pip install -r requirements.txt
   ```
 
-#### 2. Reproduce the development result:
+### 2. Reproduce the development result:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pZ7wcFXU8Y9HFvViRA0QMvJIkvNXfhLC?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
 
@@ -46,7 +46,7 @@ cd /MST-plus-plus/test_develop_code/
 python test.py --pretrained_model_path ./model_zoo/MstPlus_1stg_ps128_s8_norm.pth --outf ./exp/mst_plus_plus/
 ```
 
-#### 3. Reproduce the challenge result:
+### 3. Reproduce the challenge result:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/17RbgxylNTZo73Lgx0bcMcd69hg_NE2EJ?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
@@ -59,7 +59,7 @@ cd /MST-plus-plus/test_challenge_code/
 python test.py --pretrained_model_path ./model_zoo/MST_plus_1stg_lr4e-4_s8_norm_DevValid.pth --outf ./exp/mst_plus_plus/
 ```
 
-#### 4. Training
+### 4. Training
 
 (1)  Data preparation:
 
@@ -95,7 +95,7 @@ cd /MST-plus-plus/train_code/
 python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 --outf ./exp/ --data_root ./ARAD_1K/  --patch_size 128 --stride 8 -norm
 ```
 
-#### 5. This repo is mainly based on MST and AWAN.  In our experiments, we use the following repos:
+### 5. This repo is mainly based on MST and AWAN.  In our experiments, we use the following repos:
 
 (1)  MST: https://github.com/caiyuanhao1998/MST
 
@@ -109,7 +109,7 @@ python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 
 
 We thank these repos and have cited these works in our manuscript.
 
-#### Citation
+### Citation
 ```
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
