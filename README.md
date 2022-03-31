@@ -1,5 +1,11 @@
-<<<<<<< HEAD
-#### This is the demo code to of our paper  "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction".
+# MST
+This is the pytorch implementation of our proposed solution "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction".
+
+
+Code and models are coming soon.
+
+![Illustration of MST](/figure/MST.png)
+
 
 This repo includes:  
 
@@ -106,55 +112,11 @@ python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 
 We thank these repos and have cited these works in our manuscript.
 
 #### Citation
-```latex
+```
 @inproceedings{mst,
 	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
 	author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
 	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
 	year={2022}
 }
-
-@InProceedings{Li_2020_CVPR_Workshops,
-author = {Li, Jiaojiao and Wu, Chaoxiong and Song, Rui and Li, Yunsong and Liu, Fei},
-title = {Adaptive Weighted Attention Network With Camera Spectral Sensitivity Prior for Spectral Reconstruction From RGB Images},
-booktitle = {The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
-month = {June},
-year = {2020}
-}
-
-@inproceedings{Zamir2020MIRNet,
-    title={Learning Enriched Features for Real Image Restoration and Enhancement},
-    author={Syed Waqas Zamir and Aditya Arora and Salman Khan and Munawar Hayat
-            and Fahad Shahbaz Khan and Ming-Hsuan Yang and Ling Shao},
-    booktitle={ECCV},
-    year={2020}
-}
-
-@inproceedings{Zamir2021MPRNet,
-    title={Multi-Stage Progressive Image Restoration},
-    author={Syed Waqas Zamir and Aditya Arora and Salman Khan and Munawar Hayat
-            and Fahad Shahbaz Khan and Ming-Hsuan Yang and Ling Shao},
-    booktitle={CVPR},
-    year={2021}
-}
-
-@inproceedings{Zamir2021Restormer,
-    title={Restormer: Efficient Transformer for High-Resolution Image Restoration}, 
-    author={Syed Waqas Zamir and Aditya Arora and Salman Khan and Munawar Hayat 
-            and Fahad Shahbaz Khan and Ming-Hsuan Yang},
-    booktitle={CVPR},
-    year={2022}
-}
 ```
-
-
-
-=======
-# MST
-This is the pytorch implementation of our proposed solution "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction".
-
-
-Code and models are coming soon.
-
-![Illustration of MST](/figure/MST.png)
->>>>>>> 38165e811e4e50676f7170919b85f85f943d828f
