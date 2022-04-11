@@ -62,7 +62,7 @@ python test.py --pretrained_model_path ./model_zoo/MST_plus_1stg_lr4e-4_s8_norm_
 
 (1)  Data preparation:
 
-- Download training spectral images, training RGB images,  validation spectral images, validation RGB images from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data).
+- Download [training spectral images](https://drive.google.com/file/d/1FQBfDd248dCKClR-BpX5V2drSbeyhKcq/view), [training RGB images](https://drive.google.com/file/d/1A4GUXhVc5k5d_79gNvokEtVPG290qVkd/view),  [validation spectral images](https://drive.google.com/file/d/12QY8LHab3gzljZc3V6UyHgBee48wh9un/view), [validation RGB images](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view), and [testing RGB images](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view) from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data).
 
 - Place the training spectral images and validation spectral images to "/MST-plus-plus/train_code/ARAD_1K/Train_Spec/".
 
