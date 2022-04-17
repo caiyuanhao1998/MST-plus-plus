@@ -6,7 +6,7 @@
 
 #### News
 - **April 17, 2022:** Our paper has been accepted by CVPRW 2022, code and models have been released
-- **April 2, 2022:** We win the **First** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB
+- **April 2, 2022:** We win <font color='red'> the **First** place </font> of NIRE 2022 Challenge on Spectral Reconstruction from RGB
 
 <hr />
 
