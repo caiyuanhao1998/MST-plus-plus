@@ -1,5 +1,5 @@
 # MST++
-This is the pytorch implementation of "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction", which won the First place in NTIRE 2022 Spectral Reconstruction Challenge and has been accepted by CVPRW 2022. 
+This is the pytorch implementation of "MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction", **which won the First place in NTIRE 2022 Spectral Reconstruction Challenge and has been accepted by CVPRW 2022**. 
 
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
