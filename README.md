@@ -44,9 +44,20 @@ We are going to enlarge our model zoo in the future.
 ![comparison_fig](/figure/compare_fig.png)
 
 ### Results on NTIRE 2022 HSI Dataset - Validarion
-| Method | Params (M) | FLOPS (G) | MRAE | RMSE | PSNR| 
-| :-----------------: | :-----------: | :--------: | :------: |:------: | :------: |
-| HSCNN+ | 4.65 | 304.45 | 0.3814 | 0.0588 | 26.36 |
+| Method | Params (M) | FLOPS (G) | MRAE | RMSE | PSNR| Model Zoo |
+| :-----------------: | :-----------: | :--------: | :------: |:------: | :------: | :------------: |
+| HSCNN+   | 4.65  | 304.45 | 0.3814 | 0.0588 | 26.36 | Google Drive |
+| HRNet    | 31.70 | 163.81 | 0.3476 | 0.0550 | 26.89 | Google Drive |
+| EDSR     | 2.42  | 158.32 | 0.3277 | 0.0437 | 28.29 |	Google Drive |
+| AWAN     | 4.04  | 270.61 | 0.2500 | 0.0367 | 31.22 | Google Drive |
+| HDNet    | 2.66  | 173.81 | 0.2048 | 0.0317 | 32.13 | Google Drive |
+| HINet    | 5.21  | 31.04  | 0.2032 | 0.0303 | 32.51 | Google Drive |
+| MIRNet   | 3.75  | 42.95  | 0.1890 | 0.0274 | 33.29 | Google Drive |
+| Restormer| 15.11 | 93.77  | 0.1833 | 0.0274 | 33.40 | Google Drive |
+| MPRNet   | 3.62  | 101.59 | 0.1817 | 0.0270 | 33.50 | Google Drive |
+| MST-L    | 2.45  | 32.07  | 0.1772 | 0.0256 | 33.90 | Google Drive |
+| **MST++**| **1.62** | **23.05** | **0.1645** | **0.0248** | **34.32** | Google Drive |
+
 
 
 
