@@ -22,9 +22,10 @@ Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MS
 This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction.
 
 We are going to enlarge our model zoo in the future.
+
 <details open>
-	
 <summary><b>Supported algorithms:</b></summary>
+
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
