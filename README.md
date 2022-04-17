@@ -84,7 +84,7 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
 
 - Place the testing RGB images  to "/MST-plus-plus/dataset/Test_RGB/".
 
-- Then the code are collected as the following form:
+- Then this repo is collected as the following form:
 
   ```shell
   |--MST-plus-plus
