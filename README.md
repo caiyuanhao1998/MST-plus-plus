@@ -23,6 +23,7 @@ This repo is a baseline and toolbox containg 11 image restoration algorithms for
 
 We are going to enlarge our model zoo in the future.
 <details open>
+	
 <summary><b>Supported algorithms:</b></summary>
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
@@ -35,6 +36,7 @@ We are going to enlarge our model zoo in the future.
 * [x] [HRNet](https://arxiv.org/abs/2005.04703) (CVPRW 2020)
 * [x] [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html) (CVPRW 2018)
 * [x] [EDSR](https://arxiv.org/abs/1707.02921) (CVPRW 2017)
+
 </details>
 
 ![comparison_fig](/figure/compare_fig_v2.png)
