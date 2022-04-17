@@ -9,6 +9,7 @@ from .MPRNet import MPRNet
 from .MST import MST
 from .MST_Plus_Plus import MST_Plus_Plus
 from .Restormer import Restormer
+from .AWAN import AWAN
 
 def model_generator(method, pretrained_model_path=None):
     if method == 'mirnet':
@@ -31,6 +32,8 @@ def model_generator(method, pretrained_model_path=None):
         model = SGN().cuda()
     elif method == 'hscnn_plus':
         model = HSCNN_Plus().cuda()
+    elif method == 'awan':
+        model = AWAN().cuda()
     else:
         print(f'Method {method} is not defined !!!!')
     if pretrained_model_path is not None:
