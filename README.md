@@ -47,17 +47,17 @@ We are going to enlarge our model zoo in the future.
 ### Results on NTIRE 2022 HSI Dataset - Validarion
 |  Method   | Params (M) | FLOPS (G) |    MRAE    |    RMSE    |   PSNR    |  Model Zoo   |
 | :-------: | :--------: | :-------: | :--------: | :--------: | :-------: | :----------: |
-|  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | Google Drive |
-|   [HRNet](https://arxiv.org/abs/2005.04703)   |   31.70    |  163.81   |   0.3476   |   0.0550   |   26.89   | Google Drive |
-|   [EDSR](https://arxiv.org/abs/1707.02921)    |    2.42    |  158.32   |   0.3277   |   0.0437   |   28.29   | Google Drive |
-|   [AWAN](https://arxiv.org/abs/2005.09305)    |    4.04    |  270.61   |   0.2500   |   0.0367   |   31.22   | Google Drive |
-|   [HDNet](https://arxiv.org/abs/2203.02149)   |    2.66    |  173.81   |   0.2048   |   0.0317   |   32.13   | Google Drive |
-|   [HINet](https://arxiv.org/abs/2105.06086)   |    5.21    |   31.04   |   0.2032   |   0.0303   |   32.51   | Google Drive |
-|  [MIRNet](https://arxiv.org/abs/2003.06792)   |    3.75    |   42.95   |   0.1890   |   0.0274   |   33.29   | Google Drive |
-| [Restormer](https://arxiv.org/abs/2111.09881) |   15.11    |   93.77   |   0.1833   |   0.0274   |   33.40   | Google Drive |
-|  [MPRNet](https://arxiv.org/abs/2102.02808)   |    3.62    |  101.59   |   0.1817   |   0.0270   |   33.50   | Google Drive |
-|   [MST-L](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   |   33.90   | Google Drive |
-| [**MST++**](https://arxiv.org/abs/2111.07910) |  **1.62**  | **23.05** | **0.1645** | **0.0248** | **34.32** | Google Drive |
+|  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) |
+|   [HRNet](https://arxiv.org/abs/2005.04703)   |   31.70    |  163.81   |   0.3476   |   0.0550   |   26.89   | [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) |
+|   [EDSR](https://arxiv.org/abs/1707.02921)    |    2.42    |  158.32   |   0.3277   |   0.0437   |   28.29   | [Google Drive](https://drive.google.com/file/d/1b2DyuxEr8u2_3mnM-dOWjz_YH8XK8ir3/view?usp=sharing) |
+|   [AWAN](https://arxiv.org/abs/2005.09305)    |    4.04    |  270.61   |   0.2500   |   0.0367   |   31.22   | [Google Drive](https://drive.google.com/file/d/1M16NrkHcGdzh9fu0NAdRXIMfCK3xQyy0/view?usp=sharing) |
+|   [HDNet](https://arxiv.org/abs/2203.02149)   |    2.66    |  173.81   |   0.2048   |   0.0317   |   32.13   | [Google Drive](https://drive.google.com/file/d/1HYWUplVkCgHznuInVeghYisdJuNqSr4z/view?usp=sharing) |
+|   [HINet](https://arxiv.org/abs/2105.06086)   |    5.21    |   31.04   |   0.2032   |   0.0303   |   32.51   | [Google Drive](https://drive.google.com/file/d/1dOczPBwz6ZCcBCuRG7L7aJdfT4nCb1nx/view?usp=sharing) |
+|  [MIRNet](https://arxiv.org/abs/2003.06792)   |    3.75    |   42.95   |   0.1890   |   0.0274   |   33.29   | [Google Drive](https://drive.google.com/file/d/1Vndgr3csKZp624NtYWiSp8FTikDy8O6Q/view?usp=sharing) |
+| [Restormer](https://arxiv.org/abs/2111.09881) |   15.11    |   93.77   |   0.1833   |   0.0274   |   33.40   | [Google Drive](https://drive.google.com/file/d/1tDwe9X46bfaRrdTnQi4q2ZPnwssA5B2A/view?usp=sharing) |
+|  [MPRNet](https://arxiv.org/abs/2102.02808)   |    3.62    |  101.59   |   0.1817   |   0.0270   |   33.50   | [Google Drive](https://drive.google.com/file/d/1amYEpxlBnT1pmk7JmKWYT_bi7WAJH-ad/view?usp=sharing) |
+|   [MST-L](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   |   33.90   | [Google Drive](https://drive.google.com/file/d/17dMffhghFf7nZIqR_f8fNY7Kqh_Xm4Vw/view?usp=sharing) |
+| [**MST++**](https://arxiv.org/abs/2111.07910) |  **1.62**  | **23.05** | **0.1645** | **0.0248** | **34.32** | [Google Drive](https://drive.google.com/file/d/18X6RkcQaIuiV5gRbswo7GLv7WJG9M_WM/view?usp=sharing) |
 
 Our MST++ siginificantly outperforms other methods while requiring cheaper Params and FLOPS.
 
