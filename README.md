@@ -7,8 +7,18 @@
 - **April 17, 2022:** Our paper has been accepted by CVPRW 2022, code and models have been released
 - **April 2, 2022:** We win the **Fist** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB
 
+
+<hr />
+
+> **Abstract:** *Existing leading methods for spectral reconstruction (SR) focus on designing deeper or wider convolutional neural networks (CNNs) to learn the end-to-end mapping from the RGB image to its hyperspectral image (HSI). These CNN-based methods achieve impressive restoration performance while showing limitations in capturing the long-range dependencies and self-similarity prior. To cope with this problem, we propose a novel Transformer-based method, Multi-stage Spectral-wise Transformer (MST++),  for efficient spectral reconstruction. In particular, we employ Spectral-wise Multi-head Self-attention (S-MSA) that is based on the HSI spatially sparse while spectrally self-similar nature to compose the basic unit, Spectral-wise Attention Block (SAB). Then SABs build up Single-stage Spectral-wise Transformer (SST) that exploits a U-shaped structure to extract multi-resolution contextual information. Finally, our MST++, cascaded by several SSTs, progressively improves the reconstruction quality from coarse to fine. Comprehensive experiments show that our MST++ significantly outperforms other state-of-the-art methods. In the NTIRE 2022 Spectral Reconstruction Challenge, our approach won the First place.* 
+<hr />
+
+## Network Architecture
+![Illustration of MST](/figure/MST.png)
+
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
+## Comparison with State-of-the-art Methods
 This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction.
 
 We are going to enlarge our model zoo in the future.
@@ -30,9 +40,6 @@ We are going to enlarge our model zoo in the future.
 
 </details>
 
-
-
-![Illustration of MST](/figure/MST.png)
 
 
 This repo includes:  
