@@ -3,19 +3,26 @@ This is the implementation of "MST++: Multi-stage Spectral-wise Transformer for 
 
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
-This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction, *e.g.*, 
+This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction.
 
-- MST++		(CVPRW 2022)
-- MST		(CVPR 2022)
-- HDNet		(CVPR 2022)
-- Restormer	(CVPR 2022)
-- MPRNet	(CVPR 2021)
-- HINet		(CVPRW 2021)
-- MIRNet	(ECCV 2020)
-- AWAN		(CVPRW 2020)
-- HRNet		(CVPRW 2020)
-- HSCNN+	(CVPRW 2018)
-- EDSR		(CVPRW 2017)
+We are going to enlarge our model zoo in the future.
+
+<details open>
+<summary><b>Supported algorithms:</b></summary>
+
+* [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
+* [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
+* [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
+* [x] [Restormer](https://arxiv.org/abs/2111.09881) (CVPR 2022)
+* [x] [MPRNet](https://github.com/swz30/MPRNet) (CVPR 2021)
+* [x] [HINet](https://arxiv.org/abs/2105.06086) (CVPRW 2021)
+* [x] [MIRNet](https://arxiv.org/abs/2003.06792) (ECCV 2020)
+* [x] [AWAN](https://arxiv.org/abs/2005.09305) (CVPRW 2020)
+* [x] [HRNet](https://arxiv.org/abs/2005.04703) (CVPRW 2020)
+* [x] [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html) (CVPRW 2018)
+* [x] [EDSR](https://arxiv.org/abs/1707.02921) (CVPRW 2017)
+
+</details>
 
 
 
