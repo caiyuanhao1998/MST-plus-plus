@@ -5,8 +5,8 @@
 *The first two authors contribute equally to this work*
 
 #### News
-- **2022.04.17:** Our paper has been accepted by CVPRW 2022, code and models have been released :rocket:
-- **2022.04.02:** We win the **First** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB :trophy:
+- **2022.04.17:** :rocket: Our paper has been accepted by CVPRW 2022, code and models have been released 
+- **2022.04.02:** :trophy: We win the **First** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB 
 
 
 
