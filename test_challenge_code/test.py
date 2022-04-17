@@ -2,57 +2,43 @@ import torch
 import argparse
 import torch.backends.cudnn as cudnn
 import os
-
-from architecture.MST_plus import MST_plus
+from architecture import *
 from utils import save_matv73
 import glob
 import cv2
 import numpy as np
 import itertools
-
-os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
 parser = argparse.ArgumentParser(description="SSR")
-parser.add_argument("--outf", type=str, default=None, help='path log files')
-parser.add_argument('--pretrained_model_path', type=str, default=None)
+parser.add_argument('--method', type=str, default='mst_plus_plus')
+parser.add_argument('--pretrained_model_path', type=str, default='./model_zoo/mst_plus_plus.pth')
+parser.add_argument('--data_root', type=str, default='../dataset/')
+parser.add_argument('--outf', type=str, default='./exp/mst_plus_plus/')
 parser.add_argument('--ensemble_mode', type=str, default='mean')
+parser.add_argument("--gpu_id", type=str, default='0')
 opt = parser.parse_args()
-
-pretrained_model_path = opt.pretrained_model_path
-method = pretrained_model_path.split('/')[-2]
-model = MST_plus().cuda()
-
+os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
+os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
+if not os.path.exists(opt.outf):
+    os.makedirs(opt.outf)
 
 def main():
     cudnn.benchmark = True
-    print("\nbuilding models_baseline ...")
-    print('Parameters number is ', sum(param.numel() for param in model.parameters()))
-    if not os.path.exists(opt.outf):
-        os.makedirs(opt.outf)
-
-    if pretrained_model_path is not None:
-        print(f'load model from {pretrained_model_path}')
-        checkpoint = torch.load(pretrained_model_path)
-        model.load_state_dict({k.replace('module.', ''): v for k, v in checkpoint['state_dict'].items()},
-                              strict=True)
-    test_path = './Test_RGB/'
+    pretrained_model_path = opt.pretrained_model_path
+    method = opt.method
+    model = model_generator(method, pretrained_model_path).cuda()
+    test_path = os.path.join(opt.data_root, 'Test_RGB/')
     test(model, test_path, opt.outf)
-    os.system(f'python prep_submission.py -i {opt.outf} -o {opt.outf}/submission -k')
+    os.system(f'python prep_submission.py -i {opt.outf} -o {opt.outf}/submission')
 
 def test(model, test_path, save_path):
     img_path_name = glob.glob(os.path.join(test_path, '*.jpg'))
     img_path_name.sort()
     var_name = 'cube'
     for i in range(len(img_path_name)):
-        rgb = cv2.imread(img_path_name[i])
-        if 'bgr' not in pretrained_model_path:
-            rgb = cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB)
-        if 'norm' in pretrained_model_path:
-            rgb = np.float32(rgb)
-            rgb = (rgb - rgb.min()) / (rgb.max() - rgb.min())
-        else:
-            rgb = np.float32(rgb) / 255.0
+        bgr = cv2.imread(img_path_name[i])
+        rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+        rgb = np.float32(rgb)
+        rgb = (rgb - rgb.min()) / (rgb.max() - rgb.min())
         rgb = np.expand_dims(np.transpose(rgb, [2, 0, 1]), axis=0).copy()
         rgb = torch.from_numpy(rgb).float().cuda()
         with torch.no_grad():
@@ -65,7 +51,6 @@ def test(model, test_path, save_path):
         mat_name = img_path_name[i].split('/')[-1][:-4] + '.mat'
         mat_dir = os.path.join(save_path, mat_name)
         save_matv73(mat_dir, var_name, result)
-
 
 def forward_ensemble(x, forward_func, ensemble_mode = 'mean'):
     def _transform(data, xflip, yflip, transpose, reverse=False):

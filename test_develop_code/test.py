@@ -1,103 +1,86 @@
 import torch
-import argparse
-import torch.backends.cudnn as cudnn
-import os
-
-from architecture.MST_plus import MST_plus
-from utils import save_matv73
-import glob
-import cv2
 import numpy as np
-import itertools
+import argparse
+import os
+import torch.backends.cudnn as cudnn
+from architecture import *
+from utils import AverageMeter, save_matv73, Loss_MRAE, Loss_RMSE, Loss_PSNR
+from hsi_dataset import TrainDataset, ValidDataset
+from torch.utils.data import DataLoader
 
-os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+def warn(*args, **kwargs):
+    pass
+import warnings
+warnings.warn = warn
 
-parser = argparse.ArgumentParser(description="SSR")
-parser.add_argument("--outf", type=str, default=None, help='path log files')
-parser.add_argument('--pretrained_model_path', type=str, default=None)
-parser.add_argument('--ensemble_mode', type=str, default='mean')
+parser = argparse.ArgumentParser(description="Spectral Recovery Toolbox")
+parser.add_argument('--data_root', type=str, default='../dataset/')
+parser.add_argument('--method', type=str, default='mst_plus_plus')
+parser.add_argument('--pretrained_model_path', type=str, default='./model_zoo/mst_plus_plus.pth')
+parser.add_argument('--outf', type=str, default='./exp/mst_plus_plus/')
+parser.add_argument("--gpu_id", type=str, default='0')
 opt = parser.parse_args()
+os.environ["CUDA_DEVICE_ORDER"] = 'PCI_BUS_ID'
+os.environ["CUDA_VISIBLE_DEVICES"] = opt.gpu_id
 
-pretrained_model_path = opt.pretrained_model_path
-method = pretrained_model_path.split('/')[-2]
+if not os.path.exists(opt.outf):
+    os.makedirs(opt.outf)
 
+# load dataset
+val_data = ValidDataset(data_root=opt.data_root, bgr2rgb=True)
+val_loader = DataLoader(dataset=val_data, batch_size=1, shuffle=False, num_workers=2, pin_memory=True)
 
-model = MST_plus().cuda()
+# loss function
+criterion_mrae = Loss_MRAE()
+criterion_rmse = Loss_RMSE()
+criterion_psnr = Loss_PSNR()
+if torch.cuda.is_available():
+    criterion_mrae.cuda()
+    criterion_rmse.cuda()
 
-def main():
-    cudnn.benchmark = True
-    print("\nbuilding models_baseline ...")
-    print('Parameters number is ', sum(param.numel() for param in model.parameters()))
-    if not os.path.exists(opt.outf):
-        os.makedirs(opt.outf)
-
-    if pretrained_model_path is not None:
-        print(f'load model from {pretrained_model_path}')
-        checkpoint = torch.load(pretrained_model_path)
-        model.load_state_dict({k.replace('module.', ''): v for k, v in checkpoint['state_dict'].items()},
-                              strict=True)
-    test_path = './Valid_RGB/'
-    test(model, test_path, opt.outf)
-    os.system(f'python prep_submission.py -i {opt.outf} -o {opt.outf}/submission -k')
-
-def test(model, test_path, save_path):
-    img_path_name = glob.glob(os.path.join(test_path, '*.jpg'))
-    img_path_name.sort()
-    var_name = 'cube'
-    for i in range(len(img_path_name)):
-        rgb = cv2.imread(img_path_name[i])
-        if 'bgr' not in pretrained_model_path:
-            rgb = cv2.cvtColor(rgb, cv2.COLOR_BGR2RGB)
-        if 'norm' in pretrained_model_path:
-            rgb = np.float32(rgb)
-            rgb = (rgb - rgb.min()) / (rgb.max() - rgb.min())
-        else:
-            rgb = np.float32(rgb) / 255.0
-        rgb = np.expand_dims(np.transpose(rgb, [2, 0, 1]), axis=0).copy()
-        rgb = torch.from_numpy(rgb).float().cuda()
+# Validate
+with open(f'{opt.data_root}/split_txt/valid_list.txt', 'r') as fin:
+    hyper_list = [line.replace('\n', '.mat') for line in fin]
+hyper_list.sort()
+var_name = 'cube'
+def validate(val_loader, model):
+    model.eval()
+    losses_mrae = AverageMeter()
+    losses_rmse = AverageMeter()
+    losses_psnr = AverageMeter()
+    for i, (input, target) in enumerate(val_loader):
+        input = input.cuda()
+        target = target.cuda()
         with torch.no_grad():
-            result = forward_ensemble(rgb, model, opt.ensemble_mode)
-        result = result.cpu().numpy() * 1.0
+            # compute output
+            if method=='awan':   # To avoid out of memory, we crop the center region as input for AWAN.
+                output = model(input[:, :, 118:-118, 118:-118])
+                loss_mrae = criterion_mrae(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
+                loss_rmse = criterion_rmse(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
+                loss_psnr = criterion_psnr(output[:, :, 10:-10, 10:-10], target[:, :, 128:-128, 128:-128])
+            else:
+                output = model(input)
+                loss_mrae = criterion_mrae(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
+                loss_rmse = criterion_rmse(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
+                loss_psnr = criterion_psnr(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
+        # record loss
+        losses_mrae.update(loss_mrae.data)
+        losses_rmse.update(loss_rmse.data)
+        losses_psnr.update(loss_psnr.data)
+
+        result = output.cpu().numpy() * 1.0
         result = np.transpose(np.squeeze(result), [1, 2, 0])
         result = np.minimum(result, 1.0)
         result = np.maximum(result, 0)
-        print(img_path_name[i].split('/')[-1])
-        mat_name = img_path_name[i].split('/')[-1][:-4] + '.mat'
-        mat_dir = os.path.join(save_path, mat_name)
+        mat_name = hyper_list[i]
+        mat_dir = os.path.join(opt.outf, mat_name)
         save_matv73(mat_dir, var_name, result)
-
-def forward_ensemble(x, forward_func, ensemble_mode = 'mean'):
-    def _transform(data, xflip, yflip, transpose, reverse=False):
-        if not reverse:  # forward transform
-            if xflip:
-                data = torch.flip(data, [3])
-            if yflip:
-                data = torch.flip(data, [2])
-            if transpose:
-                data = torch.transpose(data, 2, 3)
-        else:  # reverse transform
-            if transpose:
-                data = torch.transpose(data, 2, 3)
-            if yflip:
-                data = torch.flip(data, [2])
-            if xflip:
-                data = torch.flip(data, [3])
-        return data
-
-    outputs = []
-    opts = itertools.product((False, True), (False, True), (False, True))
-    for xflip, yflip, transpose in opts:
-        data = x.clone()
-        data = _transform(data, xflip, yflip, transpose)
-        data = forward_func(data)
-        outputs.append(
-            _transform(data, xflip, yflip, transpose, reverse=True))
-    if ensemble_mode == 'mean':
-        return torch.stack(outputs, 0).mean(0)
-    elif ensemble_mode == 'median':
-        return torch.stack(outputs, 0).median(0)[0]
-
+    return losses_mrae.avg, losses_rmse.avg, losses_psnr.avg
 
 if __name__ == '__main__':
-    main()
+    cudnn.benchmark = True
+    pretrained_model_path = opt.pretrained_model_path
+    method = opt.method
+    model = model_generator(method, pretrained_model_path).cuda()
+    mrae, rmse, psnr = validate(val_loader, model)
+    print(f'method:{method}, mrae:{mrae}, rmse:{rmse}, psnr:{psnr}')
