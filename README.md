@@ -40,7 +40,7 @@ We are going to enlarge our model zoo in the future.
 
 </details>
 
-![comparison_fig](/figure/compare_fig.png)
+![comparison_fig](/figure/compare_fig.png#pic_center =400x)
 
 
 
