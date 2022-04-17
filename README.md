@@ -40,7 +40,8 @@ We are going to enlarge our model zoo in the future.
 
 </details>
 
-![comparison_fig](/figure/compare_fig.png=200x200)
+<img src="https://github.com/caiyuanhao1998/MST-plus-plus/blob/master/figure/compare_fig.png.png" height="205px"/>
+
 
 
 
