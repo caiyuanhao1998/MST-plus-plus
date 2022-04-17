@@ -3,7 +3,7 @@ This is the implementation of "MST++: Multi-stage Spectral-wise Transformer for 
 
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
-This repo is a strong baseline and toolbox containg 11 image restoration algorithms for Hyperspectral Image Reconstruction.
+This repo is a baseline and toolbox containg 11 image restoration algorithms for Hyperspectral Image Reconstruction.
 
 
 
