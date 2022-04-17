@@ -118,7 +118,7 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
           	|--test_list.txt
   ```
 
-## 2. Evaluation on the Validation Set:
+## 3. Evaluation on the Validation Set:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /MST-plus-plus/test_develop_code/model_zoo/'. 
 
@@ -163,7 +163,7 @@ python test.py --data_root ../dataset/  --method awan --pretrained_model_path ./
 
 The results will be saved in '/MST-plus-plus/test_develop_code/exp/' in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
 
-## 3. Evaluation on the Test Set:
+## 4. Evaluation on the Test Set:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
@@ -205,7 +205,7 @@ python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_p
 
 The results and submission.zip will be saved in '/MST-plus-plus/test_challenge_code/exp/'.
 
-## 4. Training
+## 5. Training
 
 To train a model, run
 
