@@ -8,7 +8,7 @@
 
 #### News
 - **2022.04.17 :** Our paper has been accepted by CVPRW 2022, code and models have been released  :rocket: 
-- **2022.04.02 :** We win the **First** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB :trophy: 
+- **2022.04.02 :** We win the **First** place of NTIRE 2022 Challenge on Spectral Reconstruction from RGB :trophy: 
 
 
 
@@ -48,7 +48,7 @@ We are going to enlarge our model zoo in the future.
 
 ![comparison_fig](/figure/compare_fig.png)
 
-### Results on NTIRE 2022 HSI Dataset - Validarion
+### Results on NTIRE 2022 HSI Dataset - Validation
 |  Method   | Params (M) | FLOPS (G) |    MRAE    |    RMSE    |   PSNR    |  Model Zoo   |
 | :-------: | :--------: | :-------: | :--------: | :--------: | :-------: | :----------: |
 |  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) |
@@ -76,10 +76,11 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
 - Python packages:
 
   ```shell
+  cd MST-plus-plus
   pip install -r requirements.txt
   ```
 
-## 2. Data preparation:
+## 2. Data Preparation:
 
 - Download [training spectral images](https://drive.google.com/file/d/1FQBfDd248dCKClR-BpX5V2drSbeyhKcq/view), [training RGB images](https://drive.google.com/file/d/1A4GUXhVc5k5d_79gNvokEtVPG290qVkd/view),  [validation spectral images](https://drive.google.com/file/d/12QY8LHab3gzljZc3V6UyHgBee48wh9un/view), [validation RGB images](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view), and [testing RGB images](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view) from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data) of NTIRE 2022 Spectral Reconstruction Challenge.
 
@@ -117,9 +118,9 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
           	|--test_list.txt
   ```
 
-## 2. Evaluation on the validation set:
+## 2. Evaluation on the Validation Set:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /MST-plus-plus/test_develop_code/model_zoo/'. 
 
 (2)  Run the following command to test the model on the validation RGB images. 
 
@@ -162,7 +163,7 @@ python test.py --data_root ../dataset/  --method awan --pretrained_model_path ./
 
 The results will be saved in '/MST-plus-plus/test_develop_code/exp/' in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
 
-## 3. Evaluation on the test set:
+## 3. Evaluation on the Test Set:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
@@ -202,11 +203,11 @@ python test.py --data_root ../dataset/  --method hrnet --pretrained_model_path .
 python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
 ```
 
-The results and submission.zip will be saved in '/MST-plus-plus/test_develop_code/exp/'.
+The results and submission.zip will be saved in '/MST-plus-plus/test_challenge_code/exp/'.
 
 ## 4. Training
 
-To train a single model, run
+To train a model, run
 
 ```shell
 cd /MST-plus-plus/train_code/
