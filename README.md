@@ -115,7 +115,7 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
 
 ## 2. Evaluation on the validation set:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1GzsNbd-XC8UZEq5V4JaisEyCSKVihCQG?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
 
 (2)  Run the following command to test the model on the validation RGB images. 
 
@@ -160,7 +160,7 @@ The results will be saved in '/MST-plus-plus/test_develop_code/exp/' in the mat 
 
 ## 3. Evaluation on the test set:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pAzS3YY8-Av49i-uoF7GLzodnt1qYReL?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
 (2)  Run the following command to test the model on the testing RGB images. 
 
