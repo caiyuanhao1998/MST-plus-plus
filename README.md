@@ -88,8 +88,8 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
 
   ```shell
   |--MST-plus-plus
-  	|--test_challenge_code
-  	|--test_develop_code
+      |--test_challenge_code
+      |--test_develop_code
       |--train_code  
       |--dataset 
           |--Train_Spec
