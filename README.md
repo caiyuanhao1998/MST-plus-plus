@@ -110,7 +110,7 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
           	|--test_list.txt
   ```
 
-## 2. Testing on the development dataset (ARAD_1K_0901~ARAD_1K_0950):
+## 2. Evaluation on the validation set:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1GzsNbd-XC8UZEq5V4JaisEyCSKVihCQG?usp=sharing) and place them to ' /source_code/test_develop_code/model_zoo/'. 
 
@@ -123,7 +123,7 @@ python test.py --data_root ../dataset/  --method mst_plus_plus --pretrained_mode
 
 The results will be saved in '/MST-plus-plus/test_develop_code/exp/mst_plus_plus/' in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
 
-## 3. Testing on the challenge dataset (ARAD_1K_0951~ARAD_1K_1000):
+## 3. Evaluation on the test set:
 
 (1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1pAzS3YY8-Av49i-uoF7GLzodnt1qYReL?usp=sharing) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
 
