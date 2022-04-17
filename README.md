@@ -24,7 +24,7 @@ This repo is a baseline and toolbox containg 11 image restoration algorithms for
 We are going to enlarge our model zoo in the future.
 
 
-<details open>
+<details close>
 <summary><b>Supported algorithms:</b></summary>
 
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
