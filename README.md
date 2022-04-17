@@ -4,8 +4,8 @@
 
 
 #### News
-- **April 17, 2022:** Our paper has been accepted by CVPRW 2022, code and models for 11 SOTA methods have been released
-- **April 2, 2022:** Our method wins the **Fist** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB
+- **April 17, 2022:** Our paper has been accepted by CVPRW 2022, code and models have been released
+- **April 2, 2022:** We win the **Fist** place of NIRE 2022 Challenge on Spectral Reconstruction from RGB
 
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
