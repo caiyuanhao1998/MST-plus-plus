@@ -3,8 +3,19 @@ This is the implementation of "MST++: Multi-stage Spectral-wise Transformer for 
 
 Our MST++ is mainly based on our work [MST](https://github.com/caiyuanhao1998/MST), which is accepted by CVPR 2022.
 
-This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction.
+This repo is a baseline and toolbox containg 11 image restoration algorithms for Spectral Reconstruction, *e.g.*, 
 
+- MST++		(CVPRW 2022) & (Winner of NTIRE 2022 Spectral Reconstruction Challenge)
+- MST		(CVPR 2022)
+- HDNet		(CVPR 2022)
+- Restormer	(CVPR 2022)
+- MPRNet	(CVPR 2021)
+- HINet		(CVPRW 2021) & (Winner of NTIRE 2017 Image Deblurring Challenge)
+- MIRNet	(ECCV 2020)
+- AWAN		(CVPRW 2020) & (Winner of NTIRE 2022 Spectral Reconstruction Challenge in 'clean' Track)
+- HRNet		(CVPRW 2020) & (Winner of NTIRE 2022 Spectral Reconstruction Challenge in 'real' Track)
+- HSCNN+	(CVPRW 2018) & (Winner of NTIRE 2018 Spectral Reconstruction Challenge)
+- EDSR		(CVPRW 2017) & (Winner of NTIRE 2017 Image Super-Resolution Challenge)
 
 
 
