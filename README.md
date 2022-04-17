@@ -43,8 +43,10 @@ We are going to enlarge our model zoo in the future.
 
 ![comparison_fig](/figure/compare_fig.png)
 
-
-
+### Results on NTIRE 2022 HSI Dataset - Validarion
+| Method | Params (M) | FLOPS (G) | MRAE | RMSE | PSNR| 
+| :-----------------: | :-----------: | :--------: | :------: |:------: | :------: |
+| HSCNN+ | 4.65 | 304.45 | 0.3814 | 0.0588 | 26.36 |
 
 
 
