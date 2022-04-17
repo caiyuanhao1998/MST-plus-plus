@@ -58,7 +58,7 @@ We are going to enlarge our model zoo in the future.
 | MST-L    | 2.45  | 32.07  | 0.1772 | 0.0256 | 33.90 | Google Drive |
 | **MST++**| **1.62** | **23.05** | **0.1645** | **0.0248** | **34.32** | Google Drive |
 
-
+Our MST++ siginificantly outperforms other methods while requiring cheaper Params and FLOPS.
 
 
 
