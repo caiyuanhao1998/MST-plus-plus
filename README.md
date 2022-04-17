@@ -2,7 +2,7 @@
 
 [Yuanhao Cai](caiyuanhao1998.github.io), [Jing Lin](https://scholar.google.com/citations?hl=zh-CN&user=SvaU2GMAAAAJ), [Zudi Lin](https://zudi-lin.github.io/), [Haoqian Wang](https://scholar.google.com.hk/citations?user=eldgnIYAAAAJ&hl=zh-CN), [Yulun Zhang](yulunzhang.com), [Hanspeter Pfister](https://vcg.seas.harvard.edu/people), [Radu Timofte](https://people.ee.ethz.ch/~timofter/), and [Luc Van Gool](https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html)
 
-The first two authors contribute equally to this work
+*The first two authors contribute equally to this work
 
 #### News
 - **April 17, 2022:** Our paper has been accepted by CVPRW 2022, code and models have been released
