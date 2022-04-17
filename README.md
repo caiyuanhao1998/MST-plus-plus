@@ -107,4 +107,11 @@ python main.py --method mst_plus_1stg --gpu_id 0 --batch_size 20 --init_lr 4e-4 
 	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
 	year={2022}
 }
+
+@inproceedings{mst_pp,
+  title={MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction},
+  author={Yuanhao Cai and Jing Lin and Zudi Lin and Haoqian Wang and Yulun Zhang and Hanspeter Pfister and Radu Timofte and Luc Van Gool},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+  year={2022}
+}
 ```
