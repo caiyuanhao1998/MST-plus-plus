@@ -24,14 +24,14 @@ This repo is a baseline and toolbox containing 11 image restoration algorithms f
 We are going to enlarge our model zoo in the future.
 
 
-<details open>
+<details close>
 <summary><b>Supported algorithms:</b></summary>
 
 * [x] [MST++](https://arxiv.org/abs/2111.07910) (CVPRW 2022)
 * [x] [MST](https://arxiv.org/abs/2111.07910) (CVPR 2022)
 * [x] [HDNet](https://arxiv.org/abs/2203.02149) (CVPR 2022)
 * [x] [Restormer](https://arxiv.org/abs/2111.09881) (CVPR 2022)
-* [x] [MPRNet](https://github.com/swz30/MPRNet) (CVPR 2021)
+* [x] [MPRNet](https://arxiv.org/abs/2102.02808) (CVPR 2021)
 * [x] [HINet](https://arxiv.org/abs/2105.06086) (CVPRW 2021)
 * [x] [MIRNet](https://arxiv.org/abs/2003.06792) (ECCV 2020)
 * [x] [AWAN](https://arxiv.org/abs/2005.09305) (CVPRW 2020)
@@ -46,17 +46,17 @@ We are going to enlarge our model zoo in the future.
 ### Results on NTIRE 2022 HSI Dataset - Validarion
 |  Method   | Params (M) | FLOPS (G) |    MRAE    |    RMSE    |   PSNR    |  Model Zoo   |
 | :-------: | :--------: | :-------: | :--------: | :--------: | :-------: | :----------: |
-|  HSCNN+   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | Google Drive |
-|   HRNet   |   31.70    |  163.81   |   0.3476   |   0.0550   |   26.89   | Google Drive |
-|   EDSR    |    2.42    |  158.32   |   0.3277   |   0.0437   |   28.29   | Google Drive |
-|   AWAN    |    4.04    |  270.61   |   0.2500   |   0.0367   |   31.22   | Google Drive |
-|   HDNet   |    2.66    |  173.81   |   0.2048   |   0.0317   |   32.13   | Google Drive |
-|   HINet   |    5.21    |   31.04   |   0.2032   |   0.0303   |   32.51   | Google Drive |
-|  MIRNet   |    3.75    |   42.95   |   0.1890   |   0.0274   |   33.29   | Google Drive |
-| Restormer |   15.11    |   93.77   |   0.1833   |   0.0274   |   33.40   | Google Drive |
-|  MPRNet   |    3.62    |  101.59   |   0.1817   |   0.0270   |   33.50   | Google Drive |
-|   MST-L   |    2.45    |   32.07   |   0.1772   |   0.0256   |   33.90   | Google Drive |
-| **MST++** |  **1.62**  | **23.05** | **0.1645** | **0.0248** | **34.32** | Google Drive |
+|  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | Google Drive |
+|   [HRNet](https://arxiv.org/abs/2005.04703)   |   31.70    |  163.81   |   0.3476   |   0.0550   |   26.89   | Google Drive |
+|   [EDSR](https://arxiv.org/abs/1707.02921)    |    2.42    |  158.32   |   0.3277   |   0.0437   |   28.29   | Google Drive |
+|   [AWAN](https://arxiv.org/abs/2005.09305)    |    4.04    |  270.61   |   0.2500   |   0.0367   |   31.22   | Google Drive |
+|   [HDNet](https://arxiv.org/abs/2203.02149)   |    2.66    |  173.81   |   0.2048   |   0.0317   |   32.13   | Google Drive |
+|   [HINet](https://arxiv.org/abs/2105.06086)   |    5.21    |   31.04   |   0.2032   |   0.0303   |   32.51   | Google Drive |
+|  [MIRNet](https://arxiv.org/abs/2003.06792)   |    3.75    |   42.95   |   0.1890   |   0.0274   |   33.29   | Google Drive |
+| [Restormer](https://arxiv.org/abs/2111.09881) |   15.11    |   93.77   |   0.1833   |   0.0274   |   33.40   | Google Drive |
+|  [MPRNet](https://arxiv.org/abs/2102.02808)   |    3.62    |  101.59   |   0.1817   |   0.0270   |   33.50   | Google Drive |
+|   [MST-L](https://arxiv.org/abs/2111.07910)   |    2.45    |   32.07   |   0.1772   |   0.0256   |   33.90   | Google Drive |
+| [**MST++**](https://arxiv.org/abs/2111.07910) |  **1.62**  | **23.05** | **0.1645** | **0.0248** | **34.32** | Google Drive |
 
 Our MST++ siginificantly outperforms other methods while requiring cheaper Params and FLOPS.
 
