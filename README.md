@@ -41,7 +41,7 @@ We are going to enlarge our model zoo in the future.
 
 </details>
 
-![comparison_fig](/figure/compare_fig_v2.png)
+![comparison_fig](/figure/compare_fig.png)
 
 
 
