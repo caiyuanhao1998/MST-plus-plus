@@ -40,14 +40,8 @@ We are going to enlarge our model zoo in the future.
 
 </details>
 
+![comparison_fig](/figure/MST.png)
 
-
-This repo includes:  
-
-- Specification of dependencies.
-- Testing code (both development and challenge result).
-- Training code.
-- Pre-trained models.
 
 
 ## 1. Create Envirement:
