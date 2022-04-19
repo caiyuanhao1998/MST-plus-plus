@@ -115,8 +115,8 @@ Our MST++ siginificantly outperforms other methods while requiring cheaper Param
               ： 
               |--ARAD_1K_1000.jpg
           |--split_txt
-          	|--train_list.txt
-          	|--test_list.txt
+              |--train_list.txt
+              |--test_list.txt
   ```
 
 ## 3. Evaluation on the Validation Set:
