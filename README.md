@@ -1,5 +1,6 @@
 # MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)
 [![winner](https://img.shields.io/badge/Winner-NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-yellowgreen)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2204.07908)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST-plus-plus)
 
 [Yuanhao Cai](caiyuanhao1998.github.io), [Jing Lin](https://scholar.google.com/citations?hl=zh-CN&user=SvaU2GMAAAAJ), [Zudi Lin](https://zudi-lin.github.io/), [Haoqian Wang](https://scholar.google.com.hk/citations?user=eldgnIYAAAAJ&hl=zh-CN), [Yulun Zhang](yulunzhang.com), [Hanspeter Pfister](https://vcg.seas.harvard.edu/people), [Radu Timofte](https://people.ee.ethz.ch/~timofter/), and [Luc Van Gool](https://ee.ethz.ch/the-department/faculty/professors/person-detail.OTAyMzM=.TGlzdC80MTEsMTA1ODA0MjU5.html)
