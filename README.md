@@ -1,5 +1,5 @@
 # MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)
-[![winner](https://img.shields.io/badge/Winner-NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-informative)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
+[![winner](https://img.shields.io/badge/Winner-NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-blue)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
 [![arXiv](https://img.shields.io/badge/arxiv-paper-blue)](https://arxiv.org/abs/2204.07908)
 ![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST-plus-plus)
 
