@@ -65,7 +65,9 @@ We are going to enlarge our model zoo in the future.
 | [**MST++**](https://arxiv.org/abs/2111.07910) |  **1.62**  | **23.05** | **0.1645** | **0.0248** | **34.32** | [Google Drive](https://drive.google.com/file/d/18X6RkcQaIuiV5gRbswo7GLv7WJG9M_WM/view?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/1FOZMNO2dwwZyRBKYUv12HA) |
 
 Our MST++ siginificantly outperforms other methods while requiring cheaper Params and FLOPS.
-Note: access code for ''Baidu Disk'' is ''mst1''.
+
+Note: access code for `Baidu Disk` is `mst1`.
+
 ## 1. Create Envirement:
 
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
