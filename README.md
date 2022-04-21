@@ -52,9 +52,7 @@ We are going to enlarge our model zoo in the future.
 ### Results on NTIRE 2022 HSI Dataset - Validation
 |  Method   | Params (M) | FLOPS (G) |    MRAE    |    RMSE    |   PSNR    |  Model Zoo   |
 | :-------: | :--------: | :-------: | :--------: | :--------: | :-------: | :----------: |
-|  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) / [Baidu Disk](链接：https://pan.baidu.com/s/1C8lg3xeq26fkYFSLzN80hA?pwd=il9q 
-提取码：il9q 
---来自百度网盘超级会员V3的分享) |
+|  [HSCNN+](https://openaccess.thecvf.com/content_cvpr_2018_workshops/w13/html/Shi_HSCNN_Advanced_CNN-Based_CVPR_2018_paper.html)   |    4.65    |  304.45   |   0.3814   |   0.0588   |   26.36   | [Google Drive](https://drive.google.com/file/d/1DqeTNNYaIKodCQWrhclVO3bXw1r4OAxJ/view?usp=sharing) / [Baidu Disk](链接：https://pan.baidu.com/s/1C8lg3xeq26fkYFSLzN80hA?pwd=il9q)|
 |   [HRNet](https://arxiv.org/abs/2005.04703)   |   31.70    |  163.81   |   0.3476   |   0.0550   |   26.89   | [Google Drive](https://drive.google.com/file/d/1RZXtCj7q_80xUT59UmdoFPP3g1YDND02/view?usp=sharing) / [Baidu Disk](https://drive.google.com/file/d/1RZXtCj7q_80xUT59UmdoFPP3g1YDND02/view?usp=sharing) |
 |   [EDSR](https://arxiv.org/abs/1707.02921)    |    2.42    |  158.32   |   0.3277   |   0.0437   |   28.29   | [Google Drive](https://drive.google.com/file/d/1b2DyuxEr8u2_3mnM-dOWjz_YH8XK8ir3/view?usp=sharing) / [Baidu Disk](https://drive.google.com/file/d/1RZXtCj7q_80xUT59UmdoFPP3g1YDND02/view?usp=sharing) |
 |   [AWAN](https://arxiv.org/abs/2005.09305)    |    4.04    |  270.61   |   0.2500   |   0.0367   |   31.22   | [Google Drive](https://drive.google.com/file/d/1M16NrkHcGdzh9fu0NAdRXIMfCK3xQyy0/view?usp=sharing) / [Baidu Disk](https://drive.google.com/file/d/1RZXtCj7q_80xUT59UmdoFPP3g1YDND02/view?usp=sharing) |
