@@ -19,6 +19,11 @@
 <hr />
 
 
+|             480 nm              |              520 nm              |              580 nm              |              660 nm              |
+| :-----------------------------: | :------------------------------: | :------------------------------: | :------------------------------: |
+| <img src="./figure/ARAD_1K_0912_channel9.gif"  height=100 width=100> | <img src="./figure/ARAD_1K_0912_channel13.gif" width=100 height=100> | <img src="./figure/ARAD_1K_0912_channel19.gif" width=100 height=100> |  <img src="./figure/ARAD_1K_0912_channel27.gif" width=100 height=100> |
+
+
 ## Network Architecture
 ![Illustration of MST](/figure/MST.png)
 
