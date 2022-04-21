@@ -250,7 +250,7 @@ python train.py --method awan  --batch_size 20 --end_epoch 300 --init_lr 1e-4 --
 The training log and models will be saved in '/MST-plus-plus/train_code/exp/'.
 
 ## Citation
-If you find this repo helpful, please consider citing our works:
+If this repo helps you, please consider citing our works:
 
 
 ```
