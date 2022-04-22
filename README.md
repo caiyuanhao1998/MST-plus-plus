@@ -112,7 +112,7 @@ Note: access code for `Baidu Disk` is `mst1`.
               |--ARAD_1K_0002.mat
               ： 
               |--ARAD_1K_0950.mat
-	  |--Train_RGB
+	|--Train_RGB
               |--ARAD_1K_0001.jpg
               |--ARAD_1K_0002.jpg
               ： 
