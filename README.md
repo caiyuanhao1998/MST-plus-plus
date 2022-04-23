@@ -124,7 +124,7 @@ Note: access code for `Baidu Disk` is `mst1`.
               |--ARAD_1K_1000.jpg
           |--split_txt
               |--train_list.txt
-              |--test_list.txt
+              |--valid_list.txt
   ```
 
 ## 3. Evaluation on the Validation Set:
