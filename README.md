@@ -93,11 +93,11 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 - Download training spectral images ([Google Drive](https://drive.google.com/file/d/1FQBfDd248dCKClR-BpX5V2drSbeyhKcq/view) / [Baidu Disk](https://pan.baidu.com/s/1NisQ6NjGvVhc0iOLH7OFvg), code: `mst1`), training RGB images ([Google Drive](https://drive.google.com/file/d/1A4GUXhVc5k5d_79gNvokEtVPG290qVkd/view) / [Baidu Disk](https://pan.baidu.com/s/1k7aSSL5MMipWYszlFaBLkA)),  validation spectral images ([Google Drive](https://drive.google.com/file/d/12QY8LHab3gzljZc3V6UyHgBee48wh9un/view) / [Baidu Disk](https://pan.baidu.com/s/1CIb5AqLWJxaGilTPtmWl0A)), validation RGB images ([Google Drive](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view) / [Baidu Disk](https://pan.baidu.com/s/1YakbXgBgnhNmYoxySmZaGw)), and testing RGB images ([Google Drive](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view) / [Baidu Disk](https://pan.baidu.com/s/1RXHK64mUfK_GeeoLzqAmeQ)) from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data) of NTIRE 2022 Spectral Reconstruction Challenge.
 
-- Place the training spectral images and validation spectral images to "/MST-plus-plus/dataset/Train_Spec/".
+- Place the training spectral images and validation spectral images to `/MST-plus-plus/dataset/Train_Spec/`.
 
-- Place the training RGB images and validation RGB images to "/MST-plus-plus/dataset/Train_RGB/".
+- Place the training RGB images and validation RGB images to `/MST-plus-plus/dataset/Train_RGB/`.
 
-- Place the testing RGB images  to "/MST-plus-plus/dataset/Test_RGB/".
+- Place the testing RGB images  to `/MST-plus-plus/dataset/Test_RGB/`.
 
 - Then this repo is collected as the following form:
 
@@ -129,7 +129,7 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 ## 3. Evaluation on the Validation Set:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw) and place them to ' /MST-plus-plus/test_develop_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/test_develop_code/model_zoo/`. 
 
 (2)  Run the following command to test the model on the validation RGB images. 
 
@@ -170,11 +170,11 @@ python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_p
 python test.py --data_root ../dataset/  --method awan --pretrained_model_path ./model_zoo/awan.pth --outf ./exp/awan/  --gpu_id 0
 ```
 
-The results will be saved in '/MST-plus-plus/test_develop_code/exp/' in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
+The results will be saved in `/MST-plus-plus/test_develop_code/exp/` in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
 
 ## 4. Evaluation on the Test Set:
 
-(1)  Download the pretrained model zoo from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw) and place them to ' /MST-plus-plus/test_challenge_code/model_zoo/'. 
+(1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/test_challenge_code/model_zoo/`. 
 
 (2)  Run the following command to test the model on the testing RGB images. 
 
@@ -212,7 +212,7 @@ python test.py --data_root ../dataset/  --method hrnet --pretrained_model_path .
 python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
 ```
 
-The results and submission.zip will be saved in '/MST-plus-plus/test_challenge_code/exp/'.
+The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_code/exp/`.
 
 ## 5. Training
 
@@ -255,7 +255,7 @@ python train.py --method hscnn_plus  --batch_size 20 --end_epoch 300 --init_lr 2
 python train.py --method awan  --batch_size 20 --end_epoch 300 --init_lr 1e-4 --outf ./exp/awan/ --data_root ../dataset/  --patch_size 128 --stride 8  --gpu_id 0
 ```
 
-The training log and models will be saved in '/MST-plus-plus/train_code/exp/'.
+The training log and models will be saved in `/MST-plus-plus/train_code/exp/`.
 
 ## Citation
 If this repo helps you, please consider citing our works:
