@@ -267,38 +267,38 @@ The training log and models will be saved in `/MST-plus-plus/train_code/exp/`.
 ```shell
 cd /MST-plus-plus/predict_code/
 
-# test MST++
+# reconstruct by MST++
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method mst_plus_plus --pretrained_model_path ./model_zoo/mst_plus_plus.pth --outf ./exp/mst_plus_plus/  --gpu_id 0
 
-# test MST-L
+# reconstruct by MST-L
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method mst --pretrained_model_path ./model_zoo/mst.pth --outf ./exp/mst/  --gpu_id 0
 
-# test MIRNet
+# reconstruct by MIRNet
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method mirnet --pretrained_model_path ./model_zoo/mirnet.pth --outf ./exp/mirnet/  --gpu_id 0
 
-# test HINet
+# reconstruct by HINet
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hinet --pretrained_model_path ./model_zoo/hinet.pth --outf ./exp/hinet/  --gpu_id 0
 
-# test MPRNet
+# reconstruct by MPRNet
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method mprnet --pretrained_model_path ./model_zoo/mprnet.pth --outf ./exp/mprnet/  --gpu_id 0
 
-# test Restormer
+# reconstruct by Restormer
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method restormer --pretrained_model_path ./model_zoo/restormer.pth --outf ./exp/restormer/  --gpu_id 0
 
-# test EDSR
+# reconstruct by EDSR
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg --method edsr --pretrained_model_path ./model_zoo/edsr.pth --outf ./exp/edsr/  --gpu_id 0
 
-# test HDNet
+# reconstruct by HDNet
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hdnet --pretrained_model_path ./model_zoo/hdnet.pth --outf ./exp/hdnet/  --gpu_id 0
 
-# test HRNet
+# reconstruct by HRNet
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hrnet --pretrained_model_path ./model_zoo/hrnet.pth --outf ./exp/hrnet/  --gpu_id 0
 
-# test HSCNN+
+# reconstruct by HSCNN+
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
 ```
 
-You can modify the './demo/ARAD_1K_0912.jpg' to your RGB image path and the results and submission.zip will be saved in `/MST-plus-plus/predict_code/exp/`.
+You can modify './demo/ARAD_1K_0912.jpg' to your RGB image path. The conconstructed results will be saved in `/MST-plus-plus/predict_code/exp/`.
 
 ## Citation
 If this repo helps you, please consider citing our works:
