@@ -298,7 +298,7 @@ python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hrnet --pretrained_m
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
 ```
 
-You can modify './demo/ARAD_1K_0912.jpg' to your RGB image path. The conconstructed results will be saved in `/MST-plus-plus/predict_code/exp/`.
+You can replace './demo/ARAD_1K_0912.jpg' with your RGB image path. The reconstructed results will be saved in `/MST-plus-plus/predict_code/exp/`.
 
 ## Citation
 If this repo helps you, please consider citing our works:
