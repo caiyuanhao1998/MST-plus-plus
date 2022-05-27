@@ -79,8 +79,6 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 - Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 
-- [PyTorch >= 1.3](https://pytorch.org/) 
-
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 - Python packages:
