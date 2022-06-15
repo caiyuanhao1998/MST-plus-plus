@@ -322,7 +322,7 @@ If this repo helps you, please consider citing our works:
 }
 
 
-#HDNet
+# HDNet
 @inproceedings{hdnet,
 	title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
 	author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
