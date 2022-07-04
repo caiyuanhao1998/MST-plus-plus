@@ -308,10 +308,10 @@ If this repo helps you, please consider citing our works:
 
 # MST
 @inproceedings{mst,
-	title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
-	author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
-	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year={2022}
+  title={Mask-guided Spectral-wise Transformer for Efficient Hyperspectral Image Reconstruction},
+  author={Yuanhao Cai and Jing Lin and Xiaowan Hu and Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2022}
 }
 
 
@@ -326,10 +326,10 @@ If this repo helps you, please consider citing our works:
 
 # HDNet
 @inproceedings{hdnet,
-	title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
-	author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
-	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-	year={2022}
+  title={HDNet: High-resolution Dual-domain Learning for Spectral Compressive Imaging},
+  author={Xiaowan Hu and Yuanhao Cai and Jing Lin and  Haoqian Wang and Xin Yuan and Yulun Zhang and Radu Timofte and Luc Van Gool},
+  booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2022}
 }
 
 ```
