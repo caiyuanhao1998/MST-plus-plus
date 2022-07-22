@@ -211,6 +211,9 @@ python test.py --data_root ../dataset/  --method hrnet --pretrained_model_path .
 
 # test HSCNN+
 python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
+
+# test AWAN
+python test.py --data_root ../dataset/  --method awan --pretrained_model_path ./model_zoo/awan.pth --outf ./exp/awan/  --gpu_id 0
 ```
 
 The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_code/exp/`.
