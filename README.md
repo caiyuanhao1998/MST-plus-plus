@@ -259,7 +259,7 @@ python train.py --method awan  --batch_size 20 --end_epoch 300 --init_lr 1e-4 --
 
 The training log and models will be saved in `/MST-plus-plus/train_code/exp/`.
 
-## 6. Prediction:
+## 6. Prediction
 
 (1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/predict_code/model_zoo/`. 
 
@@ -301,9 +301,19 @@ python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hscnn_plus --pretrai
 
 You can replace './demo/ARAD_1K_0912.jpg' with your RGB image path. The reconstructed results will be saved in `/MST-plus-plus/predict_code/exp/`.
 
+## 7. Visualization
+- Put the reconstruted HSI in `visualization/simulation_results/results/`.
+
+- Generate the RGB images of the reconstructed HSIs
+
+
+```shell
+cd visualization/
+Run show_simulation.m
+```
+
 ## Citation
 If this repo helps you, please consider citing our works:
-
 
 ```shell
 
