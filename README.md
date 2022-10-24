@@ -12,7 +12,7 @@
 ![ntire](/figure/ntire.png)
 
 #### News
-- **2022.10.24 :** We have provided Params and FLOPS evaluating function. Please feel free to check and use them.
+- **2022.10.24 :** We have provided Params and FLOPS evaluating function. Feel free to check and use them.
 - **2022.10.23 :** We have provided some visualization tool functions. Please feel free to check and use them.
 - **2022.04.17 :** Our paper has been accepted by CVPRW 2022, code and models have been released. :rocket: 
 - **2022.04.02 :** We win the **First** place of NTIRE 2022 Challenge on Spectral Reconstruction from RGB. :trophy: 
