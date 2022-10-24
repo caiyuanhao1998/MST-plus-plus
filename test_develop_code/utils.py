@@ -2,8 +2,11 @@ import hdf5storage
 import torch
 import torch.nn as nn
 import numpy as np
+from fvcore.nn import FlopCountAnalysis
+
 def save_matv73(mat_name, var_name, var):
     hdf5storage.savemat(mat_name, {var_name: var}, format='7.3', store_python_metadata=True)
+
 class AverageMeter(object):
     def __init__(self):
         self.reset()
@@ -56,3 +59,12 @@ class Loss_PSNR(nn.Module):
         err = mse(Itrue, Ifake).sum(dim=1, keepdim=True).div_(C * H * W)
         psnr = 10. * torch.log((data_range ** 2) / err) / np.log(10.)
         return torch.mean(psnr)
+
+def my_summary(test_model, H = 256, W = 256, C = 31, N = 1):
+    model = test_model.cuda()
+    print(model)
+    inputs = torch.randn((N, C, H, W)).cuda()
+    flops = FlopCountAnalysis(model,inputs)
+    n_param = sum([p.nelement() for p in model.parameters()])
+    print(f'GMac:{flops.total()/(1024*1024*1024)}')
+    print(f'Params:{n_param}')
