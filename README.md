@@ -12,6 +12,7 @@
 ![ntire](/figure/ntire.png)
 
 #### News
+- **2022.10.24 :** We have provided Params and FLOPS evaluating function. Please feel free to check and use them.
 - **2022.10.23 :** We have provided some visualization tool functions. Please feel free to check and use them.
 - **2022.04.17 :** Our paper has been accepted by CVPRW 2022, code and models have been released. :rocket: 
 - **2022.04.02 :** We win the **First** place of NTIRE 2022 Challenge on Spectral Reconstruction from RGB. :trophy: 
@@ -173,6 +174,14 @@ python test.py --data_root ../dataset/  --method awan --pretrained_model_path ./
 ```
 
 The results will be saved in `/MST-plus-plus/test_develop_code/exp/` in the mat format and the evaluation metric (including MRAE,RMSE,PSNR) will be printed.
+
+- #### Evaluating the Params and FLOPS of models
+We have provided a function `my_summary()` in `test_develop_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as
+
+```shell
+from utils import my_summary
+my_summary(MST_Plus_Plus())
+```
 
 ## 4. Evaluation on the Test Set:
 
