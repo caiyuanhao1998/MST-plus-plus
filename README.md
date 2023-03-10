@@ -180,7 +180,7 @@ We have provided a function `my_summary()` in `test_develop_code/utils.py`, plea
 
 ```shell
 from utils import my_summary
-my_summary(MST_Plus_Plus(), 256, 256, 31, 1)
+my_summary(MST_Plus_Plus(), 256, 256, 3, 1)
 ```
 
 ## 4. Evaluation on the Test Set:
