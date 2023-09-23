@@ -3,7 +3,6 @@
 [![arXiv](https://img.shields.io/badge/arxiv-paper-179bd3)](https://arxiv.org/abs/2204.07908)
 [![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
 [![mst](https://img.shields.io/badge/CVPR-MST-179bd3)](https://github.com/caiyuanhao1998/MST)
-![visitors](https://visitor-badge.glitch.me/badge?page_id=caiyuanhao1998/MST-plus-plus)
 
 Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, Radu Timofte, Luc Van Gool
 
