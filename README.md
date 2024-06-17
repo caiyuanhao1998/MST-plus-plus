@@ -15,7 +15,7 @@ Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, R
 
 *The first two authors contribute equally to this work*
 
-![ntire](/figure/ntire.png)
+<img src="./figure/ntire.png"  height=240> <img src="./figure/NTIRE_2024.png"  height=240>
 
 #### News
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
