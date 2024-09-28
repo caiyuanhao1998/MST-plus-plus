@@ -139,6 +139,8 @@ Note: access code for `Baidu Disk` is `mst1`.
               |--valid_list.txt
   ```
 
+  `note:` If you train on your custom dataset, please use the `Loss_MRAE_custom` function in `train_code/utils.py` to avoid Nan problem
+
 ## 3. Evaluation on the Validation Set:
 
 (1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/test_develop_code/model_zoo/`. 
