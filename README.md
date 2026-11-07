@@ -1,8 +1,8 @@
 # MST++: Multi-stage Spectral-wise Transformer for Efficient Spectral Reconstruction (CVPRW 2022)
-[![winner](https://img.shields.io/badge/Winner-NTIRE_2022_Challenge_on_Spectral_Reconstruction_from_RGB-179bd3)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
-[![arXiv](https://img.shields.io/badge/arxiv-paper-179bd3)](https://arxiv.org/abs/2204.07908)
-[![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-179bd3)](https://zhuanlan.zhihu.com/p/501101943)
-[![mst](https://img.shields.io/badge/CVPR-MST-179bd3)](https://github.com/caiyuanhao1998/MST)
+[![arXiv](https://img.shields.io/badge/arXiv-paper-B31B1B)](https://arxiv.org/abs/2204.07908)
+[![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
+[![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-yellow)](https://huggingface.co/CaiYuanhao/MST_pp)
 
 Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, Radu Timofte, Luc Van Gool
 
@@ -11,6 +11,7 @@ Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, R
 <img src="./figure/ntire.png"  height=240> <img src="./figure/NTIRE_2024.png"  height=240>
 
 #### News
+- **2026.11.07 :** We release our models on HuggingFace 🤗
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
 - **2024.02.15 :** [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640) begins. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) or [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) to participate in this challenge! :trophy:
 - **2023.11.02 :** Our MST++ is added to the [Awesome-Transformer-Attention](https://github.com/cmhungsteve/Awesome-Transformer-Attention/blob/main/README_2.md#image-restoration) collection. 💫
@@ -136,7 +137,14 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 ## 3. Evaluation on the Validation Set:
 
-(1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/test_develop_code/model_zoo/`. 
+(1) Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST_pp) by running the following commands from the MST-plus-plus repository root:
+
+```bash
+pip install -U huggingface_hub
+hf download CaiYuanhao/MST_pp --include "*.pth" --local-dir test_develop_code/model_zoo
+```
+
+Alternatively, download from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw) (code: `mst1`) and place the weights in `/MST-plus-plus/test_develop_code/model_zoo/`.
 
 (2)  Run the following command to test the model on the validation RGB images. 
 
