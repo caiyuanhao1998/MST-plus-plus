@@ -11,6 +11,7 @@ Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, R
 <img src="./figure/ntire.png"  height=240> <img src="./figure/NTIRE_2024.png"  height=240>
 
 #### News
+- **2026.11.16 :** We add a [Gradio demo](#gradio-demo) for interactive RGB-to-HSI reconstruction. 🤗
 - **2026.11.07 :** We release our models on HuggingFace 🤗
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
 - **2024.02.15 :** [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640) begins. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) or [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) to participate in this challenge! :trophy:
@@ -236,6 +237,20 @@ python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_p
 ```
 
 The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_code/exp/`.
+
+### Gradio Demo
+
+Run from the repository root:
+
+```bash
+pip install -r requirements-demo.txt
+python scripts/download_demo_assets.py
+python app.py
+```
+
+Open <http://127.0.0.1:7875> to upload an RGB image and browse the reconstructed spectral channels.
+
+![Gradio demo](figure/gradio_demo.png)
 
 ## 5. Training
 

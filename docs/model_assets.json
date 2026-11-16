@@ -1,0 +1,18 @@
+{
+  "model_repo": "CaiYuanhao/MST_pp",
+  "model_revision": "5aee97d596993c0c955045fced6231789c04c8a0",
+  "source_revision": "23261eaa76b2a3766339a783820b4e588e016566",
+  "sha256": {
+    "mst_plus_plus.pth": "d285430cc688d08434582eee71bae2d82661be7997af1a68d6636ec25f7a3421",
+    "mst.pth": "0e7813727e0db5c577b6326e001880ef1ac550346fa0816ff18fd6fc94ac00cd",
+    "hdnet.pth": "b66b95de00ef10a97e8f9627c57e4f800db6dc7231000ff8228c07ecf024a64c",
+    "restormer.pth": "bd41877de556ea3f28bec5f29e99b56e1c1107d6f96c90f3750ad8a2ba45493a",
+    "mprnet.pth": "efbd306029f0f019abd670e8aa458e98963801a5afb0d87246cb1e01d8e26604",
+    "hinet.pth": "79c040072b8fd58f14b0d8a516352da24320f02fd75c9f989dd4395cdf66af16",
+    "mirnet.pth": "f45e3c32ec4ddda986fb3b6dc5e0cdb1c00ab25739c075cd7487a576706a088e",
+    "awan.pth": "0c526bf41ab9bf0c022011ebed17879939acdd5c7d7a5b47f8d3088a83d74fe1",
+    "hrnet.pth": "e0d9ec24f3b2dd5889e0fdbb8f1aa01823ed7ea8ae8a56f92344aa578e036478",
+    "hscnn_plus.pth": "68a7d79fe7f072b7b55d28c4e1ecec570c53d02ab6ca8a0f9d52f1e0dcacfa8b",
+    "edsr.pth": "c3e6e88262cd6feec55620fc83bce4792fd5813845de793d726061c32ec8fe3e"
+  }
+}
