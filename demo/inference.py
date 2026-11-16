@@ -105,7 +105,7 @@ def forward_ensemble(model, tensor, alignment=8, ensemble=False):
 
 
 class Reconstructor:
-    def __init__(self, weights_dir=ROOT / "pretrained_weights", device="auto"):
+    def __init__(self, weights_dir=None, device="auto"):
         if device == "auto":
             device = "cuda:0" if torch.cuda.is_available() else "cpu"
         self.device = torch.device(device)
@@ -115,28 +115,42 @@ class Reconstructor:
             not torch.cuda.is_available() or (self.device.index or 0) >= torch.cuda.device_count()
         ):
             raise ValueError(f"CUDA device is unavailable: {self.device}")
-        self.weights_dir = Path(weights_dir).expanduser().resolve()
+        self.weights_dirs = (
+            [Path(weights_dir).expanduser().resolve()]
+            if weights_dir is not None
+            else [
+                ROOT / "test_develop_code/model_zoo",
+                ROOT / "test_challenge_code/model_zoo",
+                ROOT / "pretrained_weights",
+            ]
+        )
         self.lock = Lock()
         self.model = None
         self.loaded_key = None
         self.loaded_stamp = None
 
+    def _checkpoint_path(self, key):
+        for directory in self.weights_dirs:
+            path = directory / f"{key}.pth"
+            if path.is_file():
+                return path
+        return self.weights_dirs[0] / f"{key}.pth"
+
     def available_models(self):
         return [
-            (spec[0], key)
-            for key, spec in MODELS.items()
-            if (self.weights_dir / f"{key}.pth").is_file()
+            (spec[0], key) for key, spec in MODELS.items() if self._checkpoint_path(key).is_file()
         ]
 
     def load_model(self, key):
         if key not in MODELS:
             raise ValueError("Choose a reconstruction model from the dropdown.")
-        path = self.weights_dir / f"{key}.pth"
+        path = self._checkpoint_path(key)
         if not path.is_file():
             raise FileNotFoundError(
-                f"Missing checkpoint: {path}. Run python scripts/download_demo_assets.py."
+                f"Missing checkpoint: {key}.pth. Prepare the model zoo following README "
+                "section 3, or provide --weights-dir for your existing checkpoints."
             )
-        stamp = (path.stat().st_mtime_ns, path.stat().st_size)
+        stamp = (path, path.stat().st_mtime_ns, path.stat().st_size)
         if key == self.loaded_key and stamp == self.loaded_stamp:
             return self.model
         self.model, self.loaded_key = None, None

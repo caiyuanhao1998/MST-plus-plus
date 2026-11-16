@@ -1,9 +1,15 @@
-opencv-python==4.4.0.46
-einops
-torchvision==0.9.0
-torch==1.8.0
-scipy==1.0.0
+# Python 3.10+; use a CUDA-enabled PyTorch build for GPU inference.
+torch>=2.6
+torchvision>=0.21
+numpy>=1.24,<3
+scipy>=1.10
+opencv-python>=4.8
+Pillow>=10,<12
+einops>=0.8
 h5py
 hdf5storage
 tqdm
-
+fvcore
+gradio==5.50.0
+huggingface_hub>=0.34,<1
+matplotlib>=3.7

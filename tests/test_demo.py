@@ -13,6 +13,7 @@ from PIL import Image
 from scipy.io import loadmat
 from torch import nn
 
+from demo import inference
 from demo.inference import MODELS, Reconstructor, forward_ensemble, prepare_rgb
 from demo.spectral import (
     DEFAULT_WAVELENGTH_TEXT,
@@ -134,3 +135,51 @@ def test_native_cube_and_custom_label_exports_are_separate(tmp_path):
         assert metadata["native_wavelengths_nm"][0] == 400
         assert len([p for p in z.namelist() if p.endswith(".png")]) == 4
     np.testing.assert_array_equal(result["cube"], cube)
+
+
+def write_model_checkpoint(path, value):
+    model = nn.Conv2d(3, 31, 1, bias=False)
+    with torch.no_grad():
+        model.weight.fill_(value)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    torch.save({"state_dict": {"module.weight": model.weight.detach()}}, path)
+
+
+@pytest.mark.parametrize(
+    "directory",
+    ["test_develop_code/model_zoo", "test_challenge_code/model_zoo", "pretrained_weights"],
+)
+def test_prepared_model_zoo_is_reused_without_download(monkeypatch, tmp_path, directory):
+    write_model_checkpoint(tmp_path / directory / "mst_plus_plus.pth", 0.25)
+    monkeypatch.setattr(inference, "ROOT", tmp_path)
+    monkeypatch.setattr(inference, "build_model", lambda key: nn.Conv2d(3, 31, 1, bias=False))
+    engine = Reconstructor(device="cpu")
+    assert engine.available_models() == [("MST++", "mst_plus_plus")]
+    model = engine.load_model("mst_plus_plus")
+    torch.testing.assert_close(model.weight, torch.full_like(model.weight, 0.25))
+
+
+def test_prepared_models_can_be_shared_across_model_zoo_directories(monkeypatch, tmp_path):
+    write_model_checkpoint(tmp_path / "test_develop_code/model_zoo/mst_plus_plus.pth", 0.25)
+    write_model_checkpoint(tmp_path / "test_challenge_code/model_zoo/mst.pth", 0.5)
+    write_model_checkpoint(tmp_path / "pretrained_weights/mst_plus_plus.pth", 0.75)
+    monkeypatch.setattr(inference, "ROOT", tmp_path)
+    monkeypatch.setattr(inference, "build_model", lambda key: nn.Conv2d(3, 31, 1, bias=False))
+    engine = Reconstructor(device="cpu")
+    assert engine.available_models() == [("MST++", "mst_plus_plus"), ("MST-L", "mst")]
+    for key, expected in [("mst_plus_plus", 0.25), ("mst", 0.5)]:
+        model = engine.load_model(key)
+        torch.testing.assert_close(model.weight, torch.full_like(model.weight, expected))
+
+
+def test_explicit_weights_directory_takes_precedence(monkeypatch, tmp_path):
+    write_model_checkpoint(tmp_path / "test_develop_code/model_zoo/mst_plus_plus.pth", 0.25)
+    write_model_checkpoint(tmp_path / "custom/mst.pth", 0.5)
+    monkeypatch.setattr(inference, "ROOT", tmp_path)
+    monkeypatch.setattr(inference, "build_model", lambda key: nn.Conv2d(3, 31, 1, bias=False))
+    engine = Reconstructor(weights_dir=tmp_path / "custom", device="cpu")
+    assert engine.available_models() == [("MST-L", "mst")]
+    model = engine.load_model("mst")
+    torch.testing.assert_close(model.weight, torch.full_like(model.weight, 0.5))
+    with pytest.raises(FileNotFoundError):
+        engine.load_model("mst_plus_plus")

@@ -85,7 +85,7 @@ Note: access code for `Baidu Disk` is `mst1`.
 
 ## 1. Create Envirement:
 
-- Python 3 (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
+- Python 3.10+ (Recommend to use [Anaconda](https://www.anaconda.com/download/#linux))
 
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
@@ -94,12 +94,6 @@ Note: access code for `Baidu Disk` is `mst1`.
   ```shell
   cd MST-plus-plus
   pip install -r requirements.txt
-  ```
-
-  For the Gradio demo (Python 3.10+), install these dependencies instead:
-
-  ```shell
-  pip install -r requirements-demo.txt
   ```
 
 ## 2. Data Preparation:
@@ -147,7 +141,6 @@ Note: access code for `Baidu Disk` is `mst1`.
 (1) Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST_pp) by running the following commands from the MST-plus-plus repository root:
 
 ```bash
-pip install -U huggingface_hub
 hf download CaiYuanhao/MST_pp --include "*.pth" --local-dir test_develop_code/model_zoo
 ```
 
@@ -248,10 +241,9 @@ The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_c
 
 ![Gradio demo](figure/gradio_demo.png)
 
-Run from the repository root:
+With the environment and model zoo prepared above, run from the repository root:
 
 ```bash
-python scripts/download_demo_assets.py  # Download the 11 pretrained model weights
 python app.py
 ```
 
