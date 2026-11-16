@@ -96,6 +96,12 @@ Note: access code for `Baidu Disk` is `mst1`.
   pip install -r requirements.txt
   ```
 
+  For the Gradio demo (Python 3.10+), install these dependencies instead:
+
+  ```shell
+  pip install -r requirements-demo.txt
+  ```
+
 ## 2. Data Preparation:
 
 - Download training spectral images ([Google Drive](https://drive.google.com/file/d/1FQBfDd248dCKClR-BpX5V2drSbeyhKcq/view) / [Baidu Disk](https://pan.baidu.com/s/1NisQ6NjGvVhc0iOLH7OFvg), code: `mst1`), training RGB images ([Google Drive](https://drive.google.com/file/d/1A4GUXhVc5k5d_79gNvokEtVPG290qVkd/view) / [Baidu Disk](https://pan.baidu.com/s/1k7aSSL5MMipWYszlFaBLkA)),  validation spectral images ([Google Drive](https://drive.google.com/file/d/12QY8LHab3gzljZc3V6UyHgBee48wh9un/view) / [Baidu Disk](https://pan.baidu.com/s/1CIb5AqLWJxaGilTPtmWl0A)), validation RGB images ([Google Drive](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view) / [Baidu Disk](https://pan.baidu.com/s/1YakbXgBgnhNmYoxySmZaGw)), and testing RGB images ([Google Drive](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view) / [Baidu Disk](https://pan.baidu.com/s/1RXHK64mUfK_GeeoLzqAmeQ)) from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data) of NTIRE 2022 Spectral Reconstruction Challenge.
@@ -240,17 +246,16 @@ The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_c
 
 ### Gradio Demo
 
+![Gradio demo](figure/gradio_demo.png)
+
 Run from the repository root:
 
 ```bash
-pip install -r requirements-demo.txt
-python scripts/download_demo_assets.py
+python scripts/download_demo_assets.py  # Download the 11 pretrained model weights
 python app.py
 ```
 
 Open <http://127.0.0.1:7875> to upload an RGB image and browse the reconstructed spectral channels.
-
-![Gradio demo](figure/gradio_demo.png)
 
 ## 5. Training
 
