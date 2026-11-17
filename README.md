@@ -2,9 +2,9 @@
 [![arXiv](https://img.shields.io/badge/arXiv-paper-B31B1B)](https://arxiv.org/abs/2204.07908)
 [![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
 [![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
-[![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-007EC6)](https://huggingface.co/CaiYuanhao/MST_pp)
-[![Demo RGB-to-HSI](https://img.shields.io/badge/🤗_Demo-RGB--to--HSI-007EC6)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
-[![Demo SCI Reconstruction](https://img.shields.io/badge/🤗_Demo-SCI_Reconstruction-007EC6)](https://huggingface.co/spaces/CaiYuanhao/MST)
+[![Hugging Face](figure/badges/huggingface-models.svg)](https://huggingface.co/CaiYuanhao/MST_pp)
+[![Demo RGB-to-HSI](figure/badges/demo-rgb-to-hsi.svg)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
+[![Demo SCI Reconstruction](figure/badges/demo-sci-reconstruction.svg)](https://huggingface.co/spaces/CaiYuanhao/MST)
 
 Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, Radu Timofte, Luc Van Gool
 
