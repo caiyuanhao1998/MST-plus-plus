@@ -11,7 +11,7 @@ Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, R
 <img src="./figure/ntire.png"  height=240> <img src="./figure/NTIRE_2024.png"  height=240>
 
 #### News
-- **2026.11.16 :** We add a [Gradio demo](#gradio-demo) for interactive RGB-to-HSI reconstruction. 🤗
+- **2026.11.16 :** We add a [Gradio demo](#3-gradio-demo) for interactive RGB-to-HSI reconstruction. 🤗
 - **2026.11.07 :** We release our models on HuggingFace 🤗
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
 - **2024.02.15 :** [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640) begins. Welcome to use our [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) or [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) to participate in this challenge! :trophy:
@@ -96,9 +96,13 @@ Note: access code for `Baidu Disk` is `mst1`.
   pip install -r requirements.txt
   ```
 
+Run each section below from the repository root.
+
 ## 2. Data Preparation:
 
 - Download training spectral images ([Google Drive](https://drive.google.com/file/d/1FQBfDd248dCKClR-BpX5V2drSbeyhKcq/view) / [Baidu Disk](https://pan.baidu.com/s/1NisQ6NjGvVhc0iOLH7OFvg), code: `mst1`), training RGB images ([Google Drive](https://drive.google.com/file/d/1A4GUXhVc5k5d_79gNvokEtVPG290qVkd/view) / [Baidu Disk](https://pan.baidu.com/s/1k7aSSL5MMipWYszlFaBLkA)),  validation spectral images ([Google Drive](https://drive.google.com/file/d/12QY8LHab3gzljZc3V6UyHgBee48wh9un/view) / [Baidu Disk](https://pan.baidu.com/s/1CIb5AqLWJxaGilTPtmWl0A)), validation RGB images ([Google Drive](https://drive.google.com/file/d/19vBR_8Il1qcaEZsK42aGfvg5lCuvLh1A/view) / [Baidu Disk](https://pan.baidu.com/s/1YakbXgBgnhNmYoxySmZaGw)), and testing RGB images ([Google Drive](https://drive.google.com/file/d/1A5309Gk7kNFI-ORyADueiPOCMQNTA7r5/view) / [Baidu Disk](https://pan.baidu.com/s/1RXHK64mUfK_GeeoLzqAmeQ)) from the [competition website](https://codalab.lisn.upsaclay.fr/competitions/721#participate-get_data) of NTIRE 2022 Spectral Reconstruction Challenge.
+
+The Baidu extraction code is `mst1`; downloading also requires signing in to Baidu, and large archives use its client.
 
 - Place the training spectral images and validation spectral images to `/MST-plus-plus/dataset/Train_Spec/`.
 
@@ -136,7 +140,9 @@ Note: access code for `Baidu Disk` is `mst1`.
 
   `note:` If you train on your custom dataset, please use the `Loss_MRAE_custom` function in `train_code/utils.py` to avoid Nan problem
 
-## 3. Evaluation on the Validation Set:
+## 3. Gradio Demo
+
+![Gradio demo](figure/gradio_demo.png)
 
 (1) Download the pretrained model zoo from [Hugging Face](https://huggingface.co/CaiYuanhao/MST_pp) by running the following commands from the MST-plus-plus repository root:
 
@@ -146,10 +152,20 @@ hf download CaiYuanhao/MST_pp --include "*.pth" --local-dir test_develop_code/mo
 
 Alternatively, download from [Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw) (code: `mst1`) and place the weights in `/MST-plus-plus/test_develop_code/model_zoo/`.
 
-(2)  Run the following command to test the model on the validation RGB images. 
+(2) Run the demo from the repository root:
+
+```bash
+python app.py
+```
+
+Open <http://127.0.0.1:7875> to upload an RGB image and browse the reconstructed spectral channels.
+
+## 4. Evaluation on the Validation Set:
+
+Using the pretrained model zoo prepared above, run the following commands to test the model on the validation RGB images.
 
 ```shell
-cd /MST-plus-plus/test_develop_code/
+cd test_develop_code/
 
 # test MST++
 python test.py --data_root ../dataset/  --method mst_plus_plus --pretrained_model_path ./model_zoo/mst_plus_plus.pth --outf ./exp/mst_plus_plus/  --gpu_id 0
@@ -190,19 +206,20 @@ The results will be saved in `/MST-plus-plus/test_develop_code/exp/` in the mat 
 - #### Evaluating the Params and FLOPS of models
 We have provided a function `my_summary()` in `test_develop_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as
 
-```shell
+```python
 from utils import my_summary
+from architecture import MST_Plus_Plus
 my_summary(MST_Plus_Plus(), 256, 256, 3, 1)
 ```
 
-## 4. Evaluation on the Test Set:
+## 5. Evaluation on the Test Set:
 
 (1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/test_challenge_code/model_zoo/`. 
 
 (2)  Run the following command to test the model on the testing RGB images. 
 
 ```shell
-cd /MST-plus-plus/test_challenge_code/
+cd test_challenge_code/
 
 # test MST++
 python test.py --data_root ../dataset/  --method mst_plus_plus --pretrained_model_path ./model_zoo/mst_plus_plus.pth --outf ./exp/mst_plus_plus/  --gpu_id 0
@@ -235,26 +252,14 @@ python test.py --data_root ../dataset/  --method hrnet --pretrained_model_path .
 python test.py --data_root ../dataset/  --method hscnn_plus --pretrained_model_path ./model_zoo/hscnn_plus.pth --outf ./exp/hscnn_plus/  --gpu_id 0
 ```
 
-The results and submission.zip will be saved in `/MST-plus-plus/test_challenge_code/exp/`.
+The reconstructed MAT files are saved in `test_challenge_code/exp/<method>/`, and the ZIP in its `submission/` subdirectory.
 
-### Gradio Demo
-
-![Gradio demo](figure/gradio_demo.png)
-
-With the environment and model zoo prepared above, run from the repository root:
-
-```bash
-python app.py
-```
-
-Open <http://127.0.0.1:7875> to upload an RGB image and browse the reconstructed spectral channels.
-
-## 5. Training
+## 6. Training
 
 To train a model, run
 
 ```shell
-cd /MST-plus-plus/train_code/
+cd train_code/
 
 # train MST++
 python train.py --method mst_plus_plus  --batch_size 20 --end_epoch 300 --init_lr 4e-4 --outf ./exp/mst_plus_plus/ --data_root ../dataset/  --patch_size 128 --stride 8  --gpu_id 0
@@ -292,14 +297,14 @@ python train.py --method awan  --batch_size 20 --end_epoch 300 --init_lr 1e-4 --
 
 The training log and models will be saved in `/MST-plus-plus/train_code/exp/`.
 
-## 6. Prediction
+## 7. Prediction
 
 (1)  Download the pretrained model zoo from ([Google Drive](https://drive.google.com/drive/folders/1G1GOA0FthtmOERJIJ0pALOSgXc6XOfoY?usp=sharing) / [Baidu Disk](https://pan.baidu.com/s/14L6T5SsUejepsc63XS9Xsw), code: `mst1`) and place them to `/MST-plus-plus/predict_code/model_zoo/`. 
 
 (2)  Run the following command to reconstruct your own RGB image. 
 
 ```shell
-cd /MST-plus-plus/predict_code/
+cd predict_code/
 
 # reconstruct by MST++
 python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method mst_plus_plus --pretrained_model_path ./model_zoo/mst_plus_plus.pth --outf ./exp/mst_plus_plus/  --gpu_id 0
@@ -334,8 +339,10 @@ python test.py --rgb_path ./demo/ARAD_1K_0912.jpg  --method hscnn_plus --pretrai
 
 You can replace './demo/ARAD_1K_0912.jpg' with your RGB image path. The reconstructed results will be saved in `/MST-plus-plus/predict_code/exp/`.
 
-## 7. Visualization
+## 8. Visualization
 - Put the reconstruted HSI in `visualization/simulation_results/results/`.
+
+- Set the input MAT path in `show_simulation.m` to your reconstructed file; its example points to `ARAD_1K_0314.mat`.
 
 - Generate the RGB images of the reconstructed HSIs
 
