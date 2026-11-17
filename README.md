@@ -3,6 +3,8 @@
 [![NTIRE](https://img.shields.io/badge/NTIRE_2022-Winner-FF5797)](https://codalab.lisn.upsaclay.fr/competitions/721#learn_the_details)
 [![zhihu](https://img.shields.io/badge/zhihu-知乎中文解读-0084FF)](https://zhuanlan.zhihu.com/p/501101943)
 [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-Model-yellow)](https://huggingface.co/CaiYuanhao/MST_pp)
+[![Demo RGB-to-HSI](https://img.shields.io/badge/🤗_Demo-RGB--to--HSI-FFD21E)](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus)
+[![Demo SCI Reconstruction](https://img.shields.io/badge/🤗_Demo-SCI_Reconstruction-FFD21E)](https://huggingface.co/spaces/CaiYuanhao/MST)
 
 Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, Radu Timofte, Luc Van Gool
 
@@ -11,6 +13,7 @@ Yuanhao Cai, Jing Lin, Zudi Lin, Haoqian Wang, Yulun Zhang, Hanspeter Pfister, R
 <img src="./figure/ntire.png"  height=240> <img src="./figure/NTIRE_2024.png"  height=240>
 
 #### News
+- **2026.11.16 :** Our [RGB-to-HSI](https://huggingface.co/spaces/CaiYuanhao/MST-plus-plus) and [SCI Reconstruction](https://huggingface.co/spaces/CaiYuanhao/MST) online demos are now live on Hugging Face. 🤗
 - **2026.11.16 :** We add a [Gradio demo](#3-gradio-demo) for interactive RGB-to-HSI reconstruction. 🤗
 - **2026.11.07 :** We release our models on HuggingFace 🤗
 - **2024.03.21 :** Our methods [Retinexformer](https://github.com/caiyuanhao1998/Retinexformer) and [MST++](https://github.com/caiyuanhao1998/MST-plus-plus) (NTIRE 2022 Spectral Reconstruction Challenge Winner) ranked top-2 in the [NTIRE 2024 Challenge on Low Light Enhancement](https://codalab.lisn.upsaclay.fr/competitions/17640). Code, pre-trained models, training logs, and enhancement results will be released in [the repo of Retinexformer](https://github.com/caiyuanhao1998/Retinexformer). Stay tuned! 🚀
