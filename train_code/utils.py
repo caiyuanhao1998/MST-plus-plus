@@ -49,7 +49,7 @@ class Loss_MRAE(nn.Module):
     def forward(self, outputs, label):
         assert outputs.shape == label.shape
         error = torch.abs(outputs - label) / label
-        mrae = torch.mean(error.view(-1))
+        mrae = torch.mean(error.reshape(-1))
         return mrae
 
 
@@ -78,7 +78,7 @@ class Loss_RMSE(nn.Module):
         assert outputs.shape == label.shape
         error = outputs-label
         sqrt_error = torch.pow(error,2)
-        rmse = torch.sqrt(torch.mean(sqrt_error.view(-1)))
+        rmse = torch.sqrt(torch.mean(sqrt_error.reshape(-1)))
         return rmse
 
 class Loss_PSNR(nn.Module):
@@ -90,8 +90,8 @@ class Loss_PSNR(nn.Module):
         C = im_true.size()[1]
         H = im_true.size()[2]
         W = im_true.size()[3]
-        Itrue = im_true.clamp(0., 1.).mul_(data_range).resize_(N, C * H * W)
-        Ifake = im_fake.clamp(0., 1.).mul_(data_range).resize_(N, C * H * W)
+        Itrue = im_true.clamp(0., 1.).mul_(data_range).reshape(N, C * H * W)
+        Ifake = im_fake.clamp(0., 1.).mul_(data_range).reshape(N, C * H * W)
         mse = nn.MSELoss(reduce=False)
         err = mse(Itrue, Ifake).sum(dim=1, keepdim=True).div_(C * H * W)
         psnr = 10. * torch.log((data_range ** 2) / err) / np.log(10.)

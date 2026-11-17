@@ -24,10 +24,12 @@ def loadCube(path):
     return cube
 
 def saveCube(path, cube, bands=None, norm_factor=None):
-    hdf5storage.write({u'cube': cube,
-                       u'bands': bands,
-                       u'norm_factor': norm_factor}, '',
-                      path, matlab_compatible=True)
+    fields = {'cube': cube}
+    if bands is not None:
+        fields['bands'] = bands
+    if norm_factor is not None:
+        fields['norm_factor'] = norm_factor
+    hdf5storage.savemat(path, fields, format='7.3', store_python_metadata=False)
 
 
 def main(argv=None):
@@ -47,12 +49,16 @@ def main(argv=None):
     print(in_dir)
     print(out_dir)
 
+    input_files = sorted(glob.glob(f'{in_dir}/*.mat'))
+    if not input_files:
+        raise FileNotFoundError(f'No reconstructed MAT files found in {in_dir}')
+
     # Create output directory
     os.makedirs(out_dir, exist_ok=True)
 
     # Iterate over files
     print("Cropping files from input directory")
-    for file in tqdm(glob.glob(f'{in_dir}/*.mat')):
+    for file in tqdm(input_files):
 
         # Load file
         cube = loadCube(file)

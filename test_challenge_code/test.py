@@ -8,6 +8,9 @@ import glob
 import cv2
 import numpy as np
 import itertools
+import subprocess
+import sys
+from pathlib import Path
 parser = argparse.ArgumentParser(description="SSR")
 parser.add_argument('--method', type=str, default='mst_plus_plus')
 parser.add_argument('--pretrained_model_path', type=str, default='./model_zoo/mst_plus_plus.pth')
@@ -28,11 +31,17 @@ def main():
     model = model_generator(method, pretrained_model_path).cuda()
     test_path = os.path.join(opt.data_root, 'Test_RGB/')
     test(model, test_path, opt.outf)
-    os.system(f'python prep_submission.py -i {opt.outf} -o {opt.outf}/submission')
+    subprocess.run(
+        [sys.executable, str(Path(__file__).with_name('prep_submission.py')),
+         '-i', opt.outf, '-o', str(Path(opt.outf) / 'submission')],
+        check=True,
+    )
 
 def test(model, test_path, save_path):
     img_path_name = glob.glob(os.path.join(test_path, '*.jpg'))
     img_path_name.sort()
+    if not img_path_name:
+        raise FileNotFoundError(f'No test RGB images found in {test_path}')
     var_name = 'cube'
     for i in range(len(img_path_name)):
         bgr = cv2.imread(img_path_name[i])

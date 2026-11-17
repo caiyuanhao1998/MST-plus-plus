@@ -128,6 +128,7 @@ def main():
 
 # Validate
 def validate(val_loader, model):
+    was_training = model.training
     model.eval()
     losses_mrae = AverageMeter()
     losses_rmse = AverageMeter()
@@ -137,14 +138,22 @@ def validate(val_loader, model):
         target = target.cuda()
         with torch.no_grad():
             # compute output
-            output = model(input)
-            loss_mrae = criterion_mrae(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
-            loss_rmse = criterion_rmse(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
-            loss_psnr = criterion_psnr(output[:, :, 128:-128, 128:-128], target[:, :, 128:-128, 128:-128])
+            if opt.method == 'awan':
+                # Match the validation script's center region without full-frame attention.
+                output = model(input[:, :, 118:-118, 118:-118])
+                output = output[:, :, 10:-10, 10:-10]
+            else:
+                output = model(input)
+                output = output[:, :, 128:-128, 128:-128]
+            target = target[:, :, 128:-128, 128:-128]
+            loss_mrae = criterion_mrae(output, target)
+            loss_rmse = criterion_rmse(output, target)
+            loss_psnr = criterion_psnr(output, target)
         # record loss
         losses_mrae.update(loss_mrae.data)
         losses_rmse.update(loss_rmse.data)
         losses_psnr.update(loss_psnr.data)
+    model.train(was_training)
     return losses_mrae.avg, losses_rmse.avg, losses_psnr.avg
 
 if __name__ == '__main__':
